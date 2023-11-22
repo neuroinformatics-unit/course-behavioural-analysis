@@ -17,23 +17,25 @@ module load SLEAP
 
 # Data directory
 DATA_DIR=/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course/mouse-EPM
+# Path to the video files on which to run inference
+VIDEO_1=$DATA_DIR/rawdata/sub-01_id-M708149/ses-01_date-20200317/behav/sub-01_ses-01_task-EPM_time-165049_video.mp4
+
 # SLEAP project directory
 SLP_DIR=$DATA_DIR/derivatives/behav/software-SLEAP_project
-# Path to the video file
-VIDEO=$DATA_DIR/rawdata/sub-01_id-M708149/ses-01_date-20200317/behav/sub-01_ses-01_task-EPM_time-165049_video.mp4
 
 # Make folder to store predictions, if it doesn't already exist
 mkdir -p $SLP_DIR/predictions
 
-# Run the inference command
-sleap-track $VIDEO \
-    -m "$SLP_DIR/models/231121_165924.centroid.n=94/training_config.json" \
-    -m "$SLP_DIR/models/231121_174621.centered_instance.n=94/training_config.json" \
-    -o "$SLP_DIR/predictions/labels-v003_n-94_video-1_frames-10000_predictions.slp" \
-    --frames 1-10000 \
+# Run the inference command for the first video
+sleap-track $VIDEO_1 \
+    -m "$SLP_DIR/models/231122_133449.centroid/training_config.json" \
+    -m "$SLP_DIR/models/231122_133449.centered_instance/training_config.json" \
+    -o "$SLP_DIR/predictions/video-1.predictions.slp" \
     --gpu auto \
-    --tracking.tracker simple \
-    --tracking.similarity centroid \
-    --tracking.post_connect_single_breaks 1 \
-    --verbosity json \
-    --no-empty-frames
+
+# Export the predictions to HDF5 format
+sleap-convert \
+    -o "$SLP_DIR/predictions/video-1.predictions.analysis.h5" \
+    --format analysis \
+    "$SLP_DIR/predictions/video-1.predictions.slp"
+
