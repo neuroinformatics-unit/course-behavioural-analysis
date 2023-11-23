@@ -3,6 +3,8 @@ This repository hosts the slides and materials for the
 [behavioural analysis course](https://software-skills.neuroinformatics.dev/courses/video-analysis.html) taking place at the [Sainsbury Wellcome Centre (SWC)](https://www.sainsburywellcome.org/web/)
 in November 2023.
 
+The rendered slides are available [here](https://neuroinformatics.dev/course-behavioural-analysis-2023/#/title-slide).
+
 ## Overview
 This is an introductory course on analysing animal behaviour from video data. The course covers:
 

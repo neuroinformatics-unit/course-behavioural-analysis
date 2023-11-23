@@ -48,7 +48,7 @@ format:
 links:
    course-webpage: "https://software-skills.neuroinformatics.dev/courses/video-analysis.html"
    gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023"
-   these-slides: "https://neuroifnormatics.dev/course-behavioural-analysis-2023/"
+   these-slides: "https://neuroinformatics.dev/course-behavioural-analysis-2023/#/title-slide"
    dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&dl=0"
 ---
 
