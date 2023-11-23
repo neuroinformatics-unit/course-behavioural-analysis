@@ -76,21 +76,22 @@ Alessandro Felder
 ## Course materials {.smaller}
 
 #### These slides
-
-[neuroinformatics.dev/course-behavioural-analysis-2023]({{< meta links.these-slides >}})
+- [neuroinformatics.dev/course-behavioural-analysis-2023]({{< meta links.these-slides >}})
 
 #### Course webpage
-
-[software-skills.neurinformatics.dev/course-behavioural-analysis-2023]({{< meta links.course-webpage >}})
+- [software-skills.neurinformatics.dev/course-behavioural-analysis-2023]({{< meta links.course-webpage >}})
 
 #### GitHub repository
-
-[github.com/neuroinformatics-unit/course-behavioural-analysis-2023]({{< meta links.gh-repo >}})
+- [github.com/neuroinformatics-unit/course-behavioural-analysis-2023]({{< meta links.gh-repo >}})
 
 #### Sample data
-[Dropbox link]({{< meta links.dropbox >}}) OR...
+- [Dropbox link]({{< meta links.dropbox >}}) OR...
+- `/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`
+- credits to [*Loukia Katsouri, O'Keefe Lab*](https://www.sainsburywellcome.org/web/people/loukia-katsouri)
 
-`/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`
+{{< include slides/tracking_animals.qmd >}}
+
+{{< include slides/topdown_vs_bottomup.qmd >}}
 
 ## Enter `movement`  {.smaller}
 
@@ -110,8 +111,5 @@ Python tools for analysing body movements across space and time.
 :::
 
 ::::
-
-
-{{< include slides/extra_slide.qmd >}}
 
 
