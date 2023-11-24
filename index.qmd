@@ -105,7 +105,7 @@ Alessandro Felder
 Python tools for analysing body movements across space and time.
 
 - [GitHub repository](https://github.com/neuroinformatics-unit/movement)
-- [Documentation](https://movement.neuroifnormatics.dev)
+- [Documentation](https://movement.neuroinformatics.dev)
 - [PyPI package](https://pypi.org/project/movement/)
 - [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement)
 :::
