@@ -4,6 +4,8 @@ subtitle: SWC/GCNU Neuroinformatics Unit
 author: Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 execute: 
   enabled: true
+fig-align: center
+link-external-icon: true
 format:
     revealjs:
         theme: [default, niu-light.scss]
@@ -30,7 +32,8 @@ format:
           data-background-image: "img/swc-building.jpg" 
           data-background-size: "cover"
           data-background-position: "center"
-          data-background-opacity: "0.6"
+          data-background-opacity: "0.5"
+        aside-align: center
     html:
         theme: [default, niu-light.scss]
         logo: img/logo_niu_light.png
@@ -46,10 +49,20 @@ format:
         embed-resources: true
         page-layout: full
 links:
-   course-webpage: "https://software-skills.neuroinformatics.dev/courses/video-analysis.html"
-   gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023"
-   these-slides: "https://neuroinformatics.dev/course-behavioural-analysis-2023/#/title-slide"
-   dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&dl=0"
+  course-webpage: "https://software-skills.neuroinformatics.dev/courses/video-analysis.html"
+  gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023"
+  these-slides: "https://neuroinformatics.dev/course-behavioural-analysis-2023/#/title-slide"
+  dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&dl=0"
+  menti-link: "https://www.menti.com/aldg47maopsr"
+  menti-code: "`5306 9550`"
+papers:
+  neuro-needs-behav-title: "Neuroscience Needs Behavior: Correcting a Reductionist Bias"
+  neuro-needs-behav-doi: "10.1016/j.neuron.2016.12.041"
+  quant-behav-title: "Quantifying behavior to understand the brain"
+  quant-behav-doi: "10.1038/s41593-020-00734-z"
+  open-source-title: "Open-source tools for behavioral video analysis: Setup, methods, and best practices"
+  open-source-doi: "10.7554/eLife.79305"
+
 ---
 
 ## Introductions
@@ -88,6 +101,111 @@ Alessandro Felder
 - [Dropbox link]({{< meta links.dropbox >}}) OR...
 - `/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`
 - credits to [*Loukia Katsouri, O'Keefe Lab*](https://www.sainsburywellcome.org/web/people/loukia-katsouri)
+
+# Why behaviour?
+Neuroscience needs behaviour
+
+## What is behaviour?
+
+{{< include slides/go_to_menti.qmd >}}
+
+## Defining behaviour {.smaller}
+
+> The total movements made by the intact animal
+
+::: {style="text-align: right"}
+*Tinbergen, 1955*
+:::
+
+:::: {.fragment}
+
+> Behavior is the **internally coordinated responses** (actions or inactions) of whole living organisms (individuals or groups) **to internal and/or external stimuli**, excluding responses more easily understood as developmental changes
+
+::: {style="text-align: right"}
+*Levitis et al., 2009*
+:::
+
+::::
+
+::: aside
+source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-needs-behav-doi >}})
+:::
+
+## Neural activity and behaviour {.smaller}
+![](img/neuro_behav_mappings.png){fig-align="center" height="500px"}
+
+::: aside
+source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-needs-behav-doi >}})
+:::
+
+## Marr's three levels of analysis {.smaller}
+
+![](img/marr_three_levels.png){fig-align="center" height="500px"}
+
+::: aside
+source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-needs-behav-doi >}})
+:::
+
+## Neuroscience needs behaviour {.smaller}
+
+::: {.fragment}
+> ...detailed examination of brain parts or their selective perturbation is not sufficient to understand how the brain generates behavior
+:::
+
+::: {.fragment}
+> ...it is very hard to infer the mapping between the behavior of a system and its lower-level properties by only looking at the lower-level properties
+:::
+
+::: {.fragment}
+> The behavioral work needs to be as fine-grained as work at the neural level. Otherwise one is imperiled by a granularity mismatch between levels...
+:::
+
+::: {.fragment}
+> ...the explanations of the results at the neural level are almost entirely dependent on the higher-level vocabulary and concepts derived from behavioral work. Lower levels of explanation do not "explain away" higher levels.
+:::
+
+::: {style="text-align: right"}
+*Krakauer et al., 2017*
+:::
+
+## Which mouse is more anxious? {.smaller}
+
+[Click here to post your answers]({{< meta links.menti-link >}}){preview-link="true" style="text-align: center"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![sub-01](img/mouse1_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::: {.column width="50%"}
+![sub-02](img/mouse2_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::::
+
+
+## Quantifying behaviour: ethogram {.smaller}
+
+> **Ethogram:** a list of typical behaviours performed by an animal, including when and how often they occur
+
+| Time after start (min) | Foraging | Eating | Grooming |
+|------------------------|----------|--------|----------|
+| 0:30                   | 0        | 0      | 1        |
+| 1:00                   | 0        | 0      | 1        |
+| 1:30                   | 1        | 0      | 0        |
+| 2:00                   | 0        | 1      | 0        |
+
+## Quantifying behaviour: modern {.smaller}
+
+![](img/modern_behav_experiment_analysis.png){fig-align="center" height="500px"}
+
+::: aside
+source: [{{< meta papers.open-source-title >}}]({{< meta papers.open-source-doi >}})
+:::
+
+# Tracking animals
+from course to fine-grained
 
 {{< include slides/tracking_animals.qmd >}}
 

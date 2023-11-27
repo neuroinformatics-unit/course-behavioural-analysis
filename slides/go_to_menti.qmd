@@ -1,0 +1,5 @@
+[Click here to post your answers]({{< meta links.menti-link >}}){preview-link="true" style="text-align: center"}
+
+:::aside
+OR join at [menti.com](menti.com) and use the code {{< meta links.menti-code >}}
+:::
