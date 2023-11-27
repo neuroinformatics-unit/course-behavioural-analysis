@@ -4,7 +4,6 @@ subtitle: SWC/GCNU Neuroinformatics Unit
 author: Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 execute: 
   enabled: true
-fig-align: center
 link-external-icon: true
 format:
     revealjs:
@@ -62,7 +61,6 @@ papers:
   quant-behav-doi: "10.1038/s41593-020-00734-z"
   open-source-title: "Open-source tools for behavioral video analysis: Setup, methods, and best practices"
   open-source-doi: "10.7554/eLife.79305"
-
 ---
 
 ## Introductions
@@ -101,6 +99,70 @@ Alessandro Felder
 - [Dropbox link]({{< meta links.dropbox >}}) OR...
 - `/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`
 - credits to [*Loukia Katsouri, O'Keefe Lab*](https://www.sainsburywellcome.org/web/people/loukia-katsouri)
+
+## Schedule morning {.smaller}
+
+**10:00 - 10:15: Welcome and troubleshooting**
+
+**10:15 - 11:00: Theory I**
+
+- What is behaviour and why do we study it?
+- Tracking animals with pose estimation
+
+**11:00 - 12:00: Practical I**
+
+- Annotating video frames
+- Training a pose estimation model
+
+**12:00 - 13:30: Lunch break and SWC lab meeting**
+
+## Schedule afternoon {.smaller}
+
+**13:30 - 15:00: Practical II**
+
+- Evaluating trained models
+- Running inference on new videos
+- Importing predictions into `Python`
+- Plotting and analysing predictions
+
+**15:00 - 15:20: Break**
+
+**15:20 - 16:00: Theory II**
+
+- Classifying and segmenting behaviours
+
+**16:00 - 17:00: Practical III**
+
+- Behaviour classification with MoSeq
+
+## Install SLEAP via conda {.smaller}
+
+Read the official [SLEAP installation guide](https://sleap.ai/installation.html).
+If you already have `conda` installed, you may skip the `mamba` installation steps outlined there.
+Instead, install the `libmamba-solver` for `conda`:
+
+```{.bash}
+conda install -n base conda-libmamba-solver
+conda config --set solver libmamba
+```
+
+:::: {.fragment}
+After that, you can follow the [rest of the SLEAP installation guide](https://sleap.ai/installation.html#conda-package), substituting `conda` for `mamba` in the relevant commands.
+
+::: {.panel-tabset}
+
+### Windows & Linux
+```{.bash}
+conda create -y -n sleap -c conda-forge -c nvidia -c sleap -c anaconda sleap=1.3.1
+```
+
+### MacOS
+```{.bash}
+conda create -y -n sleap -c conda-forge -c anaconda -c sleap sleap=1.3.1
+```
+:::
+
+::::
 
 ## What is behaviour?
 
@@ -165,21 +227,6 @@ source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-need
 *Krakauer et al., 2017*
 :::
 
-## Which mouse is more anxious? {.smaller}
-
-[Click here to post your answers]({{< meta links.menti-link >}}){preview-link="true" style="text-align: center"}
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![sub-01](img/mouse1_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
-:::
-
-::: {.column width="50%"}
-![sub-02](img/mouse2_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
-:::
-
-::::
 
 ## Quantifying behaviour: ethogram {.smaller}
 
@@ -309,6 +356,151 @@ source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi 
 source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
 ::::
 
+## Which mouse is more anxious? {.smaller}
+
+[Click here to post your answers]({{< meta links.menti-link >}}){preview-link="true" style="text-align: center"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![sub-01](img/mouse1_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::: {.column width="50%"}
+![sub-02](img/mouse2_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::::
+
+## The Elevated Plus Maze {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](img/mouse1_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::: {.column width="50%"}
+- **Structure:** 2 open arms, 2 closed arms, central area
+- Exploits rodents' natural aversion to open spaces and height
+- Less anxious animals spend more time in open arms
+:::
+
+::::
+
+::: {.fragment style="text-align: center; color: #03A062;"}
+**Task**: quantify % time spent in open arms
+:::
+
+## The dataset {.smaller}
+
+`$ cd behav-analysis-course`
+```{.bash}
+.
+├── LICENSE
+├── README.md
+└── mouse-EPM
+    ├── derivatives
+    └── rawdata
+```
+
+::: {.fragment}
+`$ cd mouse-EPM/rawdata`
+```{.bash}
+.
+├── sub-01_id-M708149
+│   └── ses-01_date-20200317
+│       └── behav
+│           └── sub-01_ses-01_task-EPM_time-165049_video.mp4
+└── sub-02_id-M708154
+    └── ses-01_date-20200317
+        └── behav
+            └── sub-02_ses-01_task-EPM_time-185651_video.mp4
+```
+:::
+
+::: aside
+Organised according to the [NeuroBlueprint](https://neuroblueprint.neuroinformatics.dev/) specification.
+:::
+
+## The SLEAP workflow
+
+![](img/pose-estimation.svg){fig-align="center" height="500px"}
+
+## Create a new project
+
+![](img/SLEAP_screenshots/1_add_videos.png){fig-align="center" height="500px"}
+
+::: aside
+see [SLEAP: Creating a project](https://sleap.ai/tutorials/new-project.html)
+:::
+
+## Define a skeleton {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](img/mouse-annotated.png){fig-align="center" height="400px"}
+:::
+
+::: {.column width="40%"}
+| Source | Destination |
+|--------|-------------|
+| snout  | left_ear    |
+| snout  | right_ear   |
+| snout  | centre      |
+| left_ear  | centre   |
+| right_ear  | centre  |
+| centre | tail_base   |
+| tail_base | tail_end |
+:::
+::::
+
+:::{style="text-align: center; color: #03A062;"}
+Save the project right after defining the skeleton!
+:::
+
+## Generate labeling suggestions
+![](img/SLEAP_screenshots/5_generate_labelling_suggestions.png){fig-align="center" height="500px"}
+
+## Label initial ~20 frames
+![](img/SLEAP_screenshots/6_labelling.png){fig-align="center" height="500px"}
+
+::: aside
+see [SLEAP: Initial labeling](https://sleap.ai/tutorials/initial-labeling.html)
+:::
+
+## Start a training job 1/3
+![](img/SLEAP_screenshots/7a_training_pipeline.png){fig-align="center" height="500px"}
+
+::: aside
+see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
+:::
+
+## Start a training job 2/3
+![](img/SLEAP_screenshots/7b_training_centroid.png){fig-align="center" height="500px"}
+
+::: aside
+see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
+:::
+
+## Start a training job 3/3
+![](img/SLEAP_screenshots/7c_training_centered_instance.png){fig-align="center" height="500px"}
+
+::: aside
+see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
+:::
+
+## Monitor training progress
+![](img/SLEAP_screenshots/7d_training_progress.png){fig-align="center" height="500px"}
+
+## Evaluate trained models
+![](img/SLEAP_screenshots/8_evaluation.png){fig-align="center" height="500px"}
+
+::: aside
+see also the [SLEAP model evaluation notebook](https://sleap.ai/notebooks/Model_evaluation.html){preview-link="true"}
+:::
+
 ## Enter `movement`  {.smaller}
 
 :::: {.columns}
@@ -327,5 +519,3 @@ Python tools for analysing body movements across space and time.
 :::
 
 ::::
-
-
