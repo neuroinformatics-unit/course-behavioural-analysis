@@ -102,9 +102,6 @@ Alessandro Felder
 - `/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`
 - credits to [*Loukia Katsouri, O'Keefe Lab*](https://www.sainsburywellcome.org/web/people/loukia-katsouri)
 
-# Why behaviour?
-Neuroscience needs behaviour
-
 ## What is behaviour?
 
 {{< include slides/go_to_menti.qmd >}}
@@ -184,7 +181,6 @@ source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-need
 
 ::::
 
-
 ## Quantifying behaviour: ethogram {.smaller}
 
 > **Ethogram:** a list of typical behaviours performed by an animal, including when and how often they occur
@@ -204,12 +200,114 @@ source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-need
 source: [{{< meta papers.open-source-title >}}]({{< meta papers.open-source-doi >}})
 :::
 
-# Tracking animals
-from course to fine-grained
 
-{{< include slides/tracking_animals.qmd >}}
+## Finding and tracking animals {.smaller}
 
-{{< include slides/topdown_vs_bottomup.qmd >}}
+::: {layout-ncol=4 fig-align="center" height="180px"}
+![](img/mouse-frame.png)
+
+![](img/mouse-centroid.png)
+
+![](img/mouse-ellipse.png)
+
+![](img/mouse-pose-estimation.png)
+:::
+
+::: {.fragment layout-ncol=4 fig-align="center" height="180px"}
+![](img/mouse-centroid-tracking.png)
+
+![](img/mouse-ellipse-tracking.png)
+
+![](img/mouse-pose-tracking-single-animal.png)
+
+![](img/mouse-pose-tracking-multi-animal.png)
+:::
+
+## Pose estimation {.smaller}
+
+![](img/pose_estimation_2D.png){fig-align="center"}
+
+- "easy" in humans - vast amounts of data
+- "harder" in animals - less data, more variability
+
+:::: aside
+source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
+::::
+
+## Pose estimation software {.smaller}
+
+:::: {.columns}
+
+:::{.column width="50%"}
+[DeepLabCut](http://www.mackenziemathislab.org/deeplabcut): *transfer learning*
+:::
+
+::: {.column width="50%"}
+[SLEAP](https://sleap.ai/):*smaller networks*
+:::
+::::
+
+![source: [sleap.ai](https://sleap.ai/)](img/sleap_movie.gif){fig-align="center" height="400px" style="text-align: center"}
+
+::: aside
+Many others: 
+[LightningPose](https://github.com/danbider/lightning-pose),
+[DeepPoseKit](https://github.com/jgraving/DeepPoseKit),
+[Anipose](https://anipose.readthedocs.io/en/latest/),
+...
+:::
+
+## Multi-animal part grouping {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](img/mouse-multi-animal-keypoints.png)
+:::
+
+::: {.column width="50%" .fragment}
+![](img/mouse-part-grouping.png)
+:::
+
+::::
+
+## Top-down vs bottom-up {.smaller}
+
+![](img/pose_estimation_topdown.png){fig-align="center" height="230px"}
+
+:::{.fragment}
+![](img/pose_estimation_bottomup.png){fig-align="center" height="230px"}
+:::
+
+:::: aside
+source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
+::::
+
+## Multi-animal identity tracking {.smaller}
+
+:::: {.columns}
+
+::: {.column width="33%"}
+![](img/mouse-identity-tracking.png)
+:::
+
+::: {.column width="33%" .fragment}
+![](img/mouse-appearance-based-tracking.png)
+:::
+
+::: {.column width="33%" .fragment}
+![](img/mouse-motion-based-tracking.png)
+:::
+
+::::
+
+## 3D pose estimation {.smaller}
+
+![](img/pose_estimation_3D.png){fig-align="center" height="400px"}
+
+:::: aside
+source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
+::::
 
 ## Enter `movement`  {.smaller}
 

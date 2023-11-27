@@ -1,3 +1,0 @@
-## Tracking animals in videos {.smaller}
-
-![source: [doi.org/10.1038/s41593-020-00734-z](https://doi.org/10.1038/s41593-020-00734-z)](img/tracking_types.png){fig-align=center height=500 style="text-align: center"}

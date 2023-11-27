@@ -1,7 +1,0 @@
-## Top-down vs bottom-up {.smaller}
-
-![](img/pose_estimation_topdown.png){fig-align=center height=220}
-
-::: {.fragment}
-![source: [doi.org/10.1038/s41593-020-00734-z](https://doi.org/10.1038/s41593-020-00734-z)](img/pose_estimation_bottomup.png){fig-align=center height=220 style="text-align: center"}
-:::
