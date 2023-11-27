@@ -432,7 +432,7 @@ Organised according to the [NeuroBlueprint](https://neuroblueprint.neuroinformat
 ![](img/SLEAP_screenshots/1_add_videos.png){fig-align="center" height="500px"}
 
 ::: aside
-see [SLEAP: Creating a project](https://sleap.ai/tutorials/new-project.html)
+see SLEAP's [Creating a project](https://sleap.ai/tutorials/new-project.html)
 :::
 
 ## Define a skeleton {.smaller}
@@ -467,28 +467,28 @@ Save the project right after defining the skeleton!
 ![](img/SLEAP_screenshots/6_labelling.png){fig-align="center" height="500px"}
 
 ::: aside
-see [SLEAP: Initial labeling](https://sleap.ai/tutorials/initial-labeling.html)
+see SLEAP's [Initial labeling](https://sleap.ai/tutorials/initial-labeling.html)
 :::
 
 ## Start a training job 1/3
 ![](img/SLEAP_screenshots/7a_training_pipeline.png){fig-align="center" height="500px"}
 
 ::: aside
-see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
+see SLEAP's [Configuring models](https://sleap.ai/guides/choosing-models.html)
 :::
 
 ## Start a training job 2/3
 ![](img/SLEAP_screenshots/7b_training_centroid.png){fig-align="center" height="500px"}
 
 ::: aside
-see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
+see SLEAP's [Configuring models](https://sleap.ai/guides/choosing-models.html)
 :::
 
 ## Start a training job 3/3
 ![](img/SLEAP_screenshots/7c_training_centered_instance.png){fig-align="center" height="500px"}
 
 ::: aside
-see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
+see SLEAP's [Configuring models](https://sleap.ai/guides/choosing-models.html)
 :::
 
 ## Monitor training progress
@@ -498,7 +498,14 @@ see [SLEAP: Configuring models](https://sleap.ai/guides/choosing-models.html)
 ![](img/SLEAP_screenshots/8_evaluation.png){fig-align="center" height="500px"}
 
 ::: aside
-see also the [SLEAP model evaluation notebook](https://sleap.ai/notebooks/Model_evaluation.html){preview-link="true"}
+see also the SLEAP [model evaluation notebook](https://sleap.ai/notebooks/Model_evaluation.html){preview-link="true"}
+:::
+
+## Run inference on new frames
+![](img/SLEAP_screenshots/9_inference.png){fig-align="center" height="450px"}
+
+::: aside
+To correct predictions and update your training data, see SLEAP's  [Prediction-assisted labeling](https://sleap.ai/tutorials/assisted-labeling.html) and [Merging guide](https://sleap.ai/guides/merging.html).
 :::
 
 ## Enter `movement`  {.smaller}
@@ -519,3 +526,4 @@ Python tools for analysing body movements across space and time.
 :::
 
 ::::
+
