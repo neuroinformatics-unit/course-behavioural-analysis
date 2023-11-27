@@ -111,8 +111,8 @@ Alessandro Felder
 
 **11:00 - 12:00: Practical I**
 
-- Annotating video frames
-- Training a pose estimation model
+- Annotate video frames
+- Train a pose estimation model
 
 **12:00 - 13:30: Lunch break and SWC lab meeting**
 
@@ -120,20 +120,19 @@ Alessandro Felder
 
 **13:30 - 15:00: Practical II**
 
-- Evaluating trained models
-- Running inference on new videos
-- Importing predictions into `Python`
-- Plotting and analysing predictions
+- Evaluate trained models
+- Run inference
+- Plot and analyse predictions with `Python`
 
 **15:00 - 15:20: Break**
 
 **15:20 - 16:00: Theory II**
 
-- Classifying and segmenting behaviours
+- Behaviour classification and action segmentation
 
 **16:00 - 17:00: Practical III**
 
-- Behaviour classification with MoSeq
+- Behaviour classification with keypoint-MoSeq
 
 ## Install SLEAP via conda {.smaller}
 
