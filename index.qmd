@@ -56,11 +56,11 @@ links:
   menti-code: "`5306 9550`"
 papers:
   neuro-needs-behav-title: "Neuroscience Needs Behavior: Correcting a Reductionist Bias"
-  neuro-needs-behav-doi: "10.1016/j.neuron.2016.12.041"
+  neuro-needs-behav-doi: "https://www.sciencedirect.com/science/article/pii/S0896627316310406"
   quant-behav-title: "Quantifying behavior to understand the brain"
-  quant-behav-doi: "10.1038/s41593-020-00734-z"
+  quant-behav-doi: "https://www.nature.com/articles/s41593-020-00734-z"
   open-source-title: "Open-source tools for behavioral video analysis: Setup, methods, and best practices"
-  open-source-doi: "10.7554/eLife.79305"
+  open-source-doi: "https://elifesciences.org/articles/79305"
 ---
 
 ## Introductions
