@@ -52,6 +52,7 @@ links:
   gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023"
   these-slides: "https://neuroinformatics.dev/course-behavioural-analysis-2023/#/title-slide"
   dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&dl=0"
+  menti: "https://www.menti.com/"
   menti-link: "https://www.menti.com/aldg47maopsr"
   menti-code: "`5306 9550`"
 papers:
