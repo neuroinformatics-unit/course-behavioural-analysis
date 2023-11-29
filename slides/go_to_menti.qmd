@@ -1,4 +1,4 @@
-[Click here to post your answers]({{< meta links.menti-link >}}){preview-link="true" style="text-align: center"}
+[Answer on mentimeter]({{< meta links.menti-link >}}){preview-link="true"}
 
 :::aside
 OR join at [menti.com](https://www.menti.com/) and use the code {{< meta links.menti-code >}}

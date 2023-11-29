@@ -31,7 +31,7 @@ format:
           data-background-image: "img/swc-building.jpg" 
           data-background-size: "cover"
           data-background-position: "center"
-          data-background-opacity: "0.5"
+          data-background-opacity: "0.6"
         aside-align: center
     html:
         theme: [default, niu-light.scss]
@@ -84,6 +84,42 @@ Alessandro Felder
 :::
 ::::
 
+## Schedule: morning {.smaller}
+
+**10:00 - 10:20: Welcome and troubleshooting**
+
+**10:20 - 11:00: Background**
+
+- What is behaviour and why do we study it?
+- Tracking animals with pose estimation
+
+**11:00 - 12:00: Practice with SLEAP**
+
+- Annotate video frames
+- Train a pose estimation model
+
+**12:00 - 13:30: Lunch break and SWC lab meeting**
+
+## Schedule: afternoon {.smaller}
+
+**13:30 - 14:30: Practice with SLEAP cont.**
+
+- Evaluate trained models
+- Run inference
+
+**14:30 - 15:00: Coffee break and discussion**
+
+**15:00 - 16:30: Practice with Juptyer notebook**
+
+- Load and visualise pose tracks
+- Filter pose tracks
+- Quantify time spent in ROIs
+
+**16:30 - 17:00: Further discussion**
+
+- Behaviour classification and action segmentation
+
+
 ## Course materials {.smaller}
 
 #### These slides
@@ -99,40 +135,6 @@ Alessandro Felder
 - [Dropbox link]({{< meta links.dropbox >}}) OR...
 - `/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`
 - credits to [*Loukia Katsouri, O'Keefe Lab*](https://www.sainsburywellcome.org/web/people/loukia-katsouri)
-
-## Schedule morning {.smaller}
-
-**10:00 - 10:15: Welcome and troubleshooting**
-
-**10:15 - 11:00: Theory I**
-
-- What is behaviour and why do we study it?
-- Tracking animals with pose estimation
-
-**11:00 - 12:00: Practical I**
-
-- Annotate video frames
-- Train a pose estimation model
-
-**12:00 - 13:30: Lunch break and SWC lab meeting**
-
-## Schedule afternoon {.smaller}
-
-**13:30 - 15:00: Practical II**
-
-- Evaluate trained models
-- Run inference
-- Plot and analyse predictions with `Python`
-
-**15:00 - 15:20: Break**
-
-**15:20 - 16:00: Theory II**
-
-- Behaviour classification and action segmentation
-
-**16:00 - 17:00: Practical III**
-
-- Behaviour classification with keypoint-MoSeq
 
 ## Install SLEAP via conda {.smaller}
 
@@ -240,7 +242,22 @@ source: [{{< meta papers.neuro-needs-behav-title >}}]({{< meta papers.neuro-need
 
 ## Quantifying behaviour: modern {.smaller}
 
-![](img/modern_behav_experiment_analysis.png){fig-align="center" height="500px"}
+:::: {.columns}
+
+::: {.column width="70%"}
+![](img/modern_behav_experiment_analysis.png){fig-align="center" height="400px"}
+:::
+
+::: {.column width="30%"}
+
+```{mermaid}
+%%| file: img/video_pipeline.mmd
+%%| fig-height: 400px
+```
+
+:::
+
+::::
 
 ::: aside
 source: [{{< meta papers.open-source-title >}}]({{< meta papers.open-source-doi >}})
@@ -271,10 +288,24 @@ source: [{{< meta papers.open-source-title >}}]({{< meta papers.open-source-doi 
 
 ## Pose estimation {.smaller}
 
+:::: {.columns}
+
+::: {.column width="70%"}
 ![](img/pose_estimation_2D.png){fig-align="center"}
+:::
+
+::: {.column width="30%"}
+```{mermaid}
+%%| file: img/video_pipeline_pose.mmd
+%%| fig-height: 400px
+```
+:::
+
+::::
 
 - "easy" in humans - vast amounts of data
 - "harder" in animals - less data, more variability
+
 
 :::: aside
 source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
@@ -388,7 +419,7 @@ source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi 
 ::::
 
 ::: {.fragment style="text-align: center; color: #03A062;"}
-**Task**: quantify % time spent in open arms
+**Task**: quantify time spent in open arms / closed arms
 :::
 
 ## The dataset {.smaller}
@@ -507,6 +538,41 @@ see also the SLEAP [model evaluation notebook](https://sleap.ai/notebooks/Model_
 To correct predictions and update your training data, see SLEAP's  [Prediction-assisted labeling](https://sleap.ai/tutorials/assisted-labeling.html) and [Merging guide](https://sleap.ai/guides/merging.html).
 :::
 
+## Using SLEAP on the HPC cluster
+
+::: {.incremental}
+- training and inference are GPU-intensive tasks
+- SLEAP is installed as a module on SWC's HPC cluster
+- `module load sleap`
+- [See this guide for detailed instructions](https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html){preview-link="true"}
+- [Come to the HPC course next week](https://software-skills.neuroinformatics.dev/courses/hpc-behaviour.html){preview-link="true"}
+- Similar instructions for the DeepLabCut module underway...
+:::
+
+## Predictions in the sample dataset {.smaller}
+
+`$ cd behav-analysis-course/mouse-EPM`
+```{.bash}
+.
+└── derivatives
+    └── behav
+        ├── software-DLC_predictions
+        └── software-SLEAP_project
+            └── predictions
+```
+::: {.fragment}
+- Different pose estimation software produce predictions in different formats.
+- Different workflows are needed for importing predicted poses into `Python` for further analysis.
+  - e.g. for `SLEAP` see [Analysis examples](https://sleap.ai/notebooks/Analysis_examples.html){preview-link="true"}
+:::
+
+## What happens after tracking? {.smaller}
+
+```{mermaid}
+%%| file: img/video_pipeline_kino.mmd
+%%| fig-height: 500px
+```
+
 ## Enter `movement`  {.smaller}
 
 :::: {.columns}
@@ -522,6 +588,138 @@ Python tools for analysing body movements across space and time.
 - [Documentation](https://movement.neuroinformatics.dev)
 - [PyPI package](https://pypi.org/project/movement/)
 - [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement)
+:::
+
+::::
+
+## `movement` features {.smaller}
+
+Implemented: __I/O__
+
+* ✅ import pose tracks from `DeepLabCut` and `SLEAP` 
+* ✅ represent pose tracks in common data structure
+* ⏳ export pose tracks in various formats
+
+::: {.fragment}
+In progress / planned:
+
+* ⏳ Interactive visualisations: plot pose tracks, ROIs, etc.
+* 🤔 Data cleaning:  drop bad values, interpolate, smooth, resample etc.
+* 🤔 Derive kinematic variables: velocity, acceleration, orientation, etc.
+* 🤔 Integrate spatial information about the environment (e.g. ROIs, arena)
+* 🤔 Coordinate transformations (e.g. egocentric)
+:::
+
+::: aside
+For more info see movement's [Mission & Scope statement](https://movement.neuroinformatics.dev/community/mission-scope.html) and [Roadmap](https://movement.neuroinformatics.dev/community/roadmap.html).
+:::
+
+## The movement data structure {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+![single-animal](img/movement-dataset-single-individual.png){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::: {.column width="50%" .fragment}
+![multi-animal](img/movement-dataset-multi-individual.png){fig-align="center" height="400px" style="text-align: center"}
+:::
+::::
+
+::: aside
+Powered by [`xarray`](https://docs.xarray.dev/en/latest/index.html) and its [data structures](https://tutorial.xarray.dev/fundamentals/01_datastructures.html)
+:::
+
+## Time to play 🛝 {.smaller}
+
+In a terminal, clone [the course repository]({{< meta links.gh-repo >}}) and go to the notebooks directory:
+
+```{.bash}
+git clone https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023.git
+cd course-behavioural-analysis-2023/notebooks
+```
+
+::: {.fragment}
+Create a new conda environment and install required packages:
+
+```{.bash}
+conda create -n epm-analysis -c conda-forge python=3.10 pytables
+conda activate epm-analysis
+pip install -r notebook_requirements.txt
+```
+:::
+
+::: {.fragment}
+Once all requirements are installed, you can:
+
+- open the `EPM_analysis.ipynb` notebook
+- select the environment `epm-analysis` as the kernel
+
+We will go through the notebook step-by-step, together.
+:::
+
+## Which mouse was more anxious?
+This time, with numbers!
+
+{{< include slides/go_to_menti.qmd >}}
+
+## From behaviour to actions {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+```{mermaid}
+%%| file: img/video_pipeline_actions.mmd
+%%| fig-height: 500px
+``` 
+:::
+
+::: {.column width="50%"}
+Several tools:
+
+- [SimBA](https://github.com/sgoldenlab/simba)
+- [MoSeq](https://dattalab.github.io/moseq2-website/index.html)
+- [VAME](https://edspace.american.edu/openbehavior/project/vame/)
+- [B-SOID](https://github.com/YttriLab/B-SOID)
+- [DLC2action](https://github.com/amathislab/DLC2action)
+:::
+
+::::
+
+## Classifying behaviours
+
+![](img/behaviour-classification.png){fig-align="center" height="400px"}
+
+::: aside
+source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
+:::
+
+## Supervised vs unsupervised approaches
+
+{{< include slides/go_to_menti.qmd >}}
+
+## Feedback
+
+Tell us what you think about this course!
+
+Write on [IdeaBoardz](https://ideaboardz.com/for/course-behav-analysis-2023/5137372)
+or talk to us anytime.
+
+## Join the movement! {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](img/movement-dataset-multi-individual.png){fig-align="center" height="400px"}
+:::
+
+::: {.column width="50%"}
+- Contributions to `movement` are absolutely encouraged, whether to fix a bug,
+develop a new feature, improve the documentation, or just spark a discussion.
+
+- [Chat with us on Zulip]((https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement))
+
+- Or [open an issue on GitHub](https://github.com/neuroinformatics-unit/movement/issues)
 :::
 
 ::::
