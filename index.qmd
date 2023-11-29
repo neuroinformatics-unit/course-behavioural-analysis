@@ -110,7 +110,7 @@ Alessandro Felder
 
 **14:30 - 15:00: Coffee break and discussion**
 
-**15:00 - 16:30: Practice with Juptyer notebook**
+**15:00 - 16:30: Practice with Jupyter notebook**
 
 - Load and visualise pose tracks
 - Filter pose tracks
