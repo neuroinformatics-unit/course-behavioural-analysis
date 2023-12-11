@@ -49,8 +49,8 @@ format:
         page-layout: full
 links:
   course-webpage: "https://software-skills.neuroinformatics.dev/courses/video-analysis.html"
-  gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023"
-  these-slides: "https://neuroinformatics.dev/course-behavioural-analysis-2023/#/title-slide"
+  gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis"
+  these-slides: "https://neuroinformatics.dev/course-behavioural-analysis/#/title-slide"
   dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&dl=0"
   menti: "https://www.menti.com/"
   menti-link: "https://www.menti.com/aldg47maopsr"
@@ -124,13 +124,13 @@ Alessandro Felder
 ## Course materials {.smaller}
 
 #### These slides
-- [neuroinformatics.dev/course-behavioural-analysis-2023]({{< meta links.these-slides >}})
+- [neuroinformatics.dev/course-behavioural-analysis]({{< meta links.these-slides >}})
 
 #### Course webpage
-- [software-skills.neurinformatics.dev/course-behavioural-analysis-2023]({{< meta links.course-webpage >}})
+- [software-skills.neurinformatics.dev/course-behavioural-analysis]({{< meta links.course-webpage >}})
 
 #### GitHub repository
-- [github.com/neuroinformatics-unit/course-behavioural-analysis-2023]({{< meta links.gh-repo >}})
+- [github.com/neuroinformatics-unit/course-behavioural-analysis]({{< meta links.gh-repo >}})
 
 #### Sample data
 - [Dropbox link]({{< meta links.dropbox >}}) OR...
@@ -636,8 +636,8 @@ Powered by [`xarray`](https://docs.xarray.dev/en/latest/index.html) and its [dat
 In a terminal, clone [the course repository]({{< meta links.gh-repo >}}) and go to the notebooks directory:
 
 ```{.bash}
-git clone https://github.com/neuroinformatics-unit/course-behavioural-analysis-2023.git
-cd course-behavioural-analysis-2023/notebooks
+git clone https://github.com/neuroinformatics-unit/course-behavioural-analysis.git
+cd course-behavioural-analysis/notebooks
 ```
 
 ::: {.fragment}
