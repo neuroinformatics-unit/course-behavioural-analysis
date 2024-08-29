@@ -67,7 +67,7 @@ We have chosen `v1.3.1` to ensure compatibility with the version of SLEAP instal
 
 ### Get the sample data
 You can download the sample data for this course from 
-[DropBox](https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&dl=0).
+[DropBox](https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&st=zolupk4i&dl=0).
 Please click on "Download" to get the entire `behav-analysis-course.zip` archive, and unzip it.
 
 Alternatively, if you have access to the SWC's `ceph` filesystem, you can find the dataset in `/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course`. To mount `ceph` on your laptop, follow the [relevant instructions on the SWC wiki](https://wiki.ucl.ac.uk/display/SSC/Storage%3A+Ceph). You need to be connected to the SWC network both to read the wiki and to mount `ceph`.
