@@ -419,18 +419,50 @@ results = kpms.apply_model(
     results_path=(
         '/home/sminano/swc/project_teaching_behaviour/mouse-EPM-moseq-video-1/'
         '2024_09_12-18_32_02/results_video-2.h5'
-    )
-)  # ----> overwrites results.h5 file!
+    )  # ----> otherwise it overwrites results.h5 file!
+)  
 
 # optionally rerun `save_results_as_csv` to export the new results
 kpms.save_results_as_csv(results, project_dir, model_name)
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 # Read new results
+# can we combine all?
 
-results_all = kpms.load_results(
-    path='/home/sminano/swc/project_teaching_behaviour/mouse-EPM-moseq-video-1/2024_09_12-18_32_02/results.h5'
+# ```
+#     results.h5
+#     ├──recording_name1
+#     │  ├──syllable      # syllable labels (z)
+#     │  ├──latent_state  # inferred low-dim pose state (x)
+#     │  ├──centroid      # inferred centroid (v)
+#     │  └──heading       # inferred heading (h)
+#     ⋮
+# ```
+
+results_2 = kpms.load_results(
+    path='/home/sminano/swc/project_teaching_behaviour/mouse-EPM-moseq-video-1/2024_09_12-18_32_02/results_video-2.h5'
 )
-results.keys()
+results_2.keys()
+
+# %%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Centroid location in top three syllables
+fig, ax = plt.subplots(1,1)
+top_k_syllables = 3
+
+centroid_array = results_2['video-2.predictions.analysis']['centroid']
+syllable_array = results_2['video-2.predictions.analysis']['syllable']
+
+ax.scatter(
+    x=centroid_array[:,0],
+    y=centroid_array[:,1],
+    s=1,
+    c=[
+        list_colors[int(syl_id)%len(list_colors)] 
+        if syl_id in list(range(top_k_syllables)) else (0.5, 0.5, 0.5)
+        for syl_id in syllable_array
+    ],
+)
+# ax.legend([f'syllable {syl}' for syl in list(range(top_k_syllables))])
+ax.set_title(f'{list(results_2.keys())[0]} - top {top_k_syllables} syllables')
 
 # %%
