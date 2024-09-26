@@ -51,7 +51,7 @@ links:
   course-webpage: "https://software-skills.neuroinformatics.dev/courses/video-analysis.html"
   gh-repo: "https://github.com/neuroinformatics-unit/course-behavioural-analysis"
   these-slides: "https://neuroinformatics.dev/course-behavioural-analysis/#/title-slide"
-  dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&st=zolupk4i&dl=0"
+  dropbox: "https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&st=56698231&dl=0"
   menti: "https://www.menti.com/"
   menti-link: "https://www.menti.com/aldg47maopsr"
   menti-code: "`5306 9550`"
