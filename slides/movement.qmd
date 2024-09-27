@@ -1,0 +1,76 @@
+# Practice: movement {background-color="#03A062"}
+
+## movement {.smaller}
+
+A Python toolbox for analysing body movements across space and time, to aid the study of animal behaviour in neuroscience.
+
+![](img/movement_overview.png){fig-align="center"}
+
+::: aside
+[GitHub repository](https://github.com/neuroinformatics-unit/movement) | [Documentation](https://movement.neuroinformatics.dev) | [Zulip chat](https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement)
+:::
+
+## The movement poses dataset {.smaller}
+
+:::: {.columns}
+::: {.column width="25%"}
+![](img/movement_poses_schematic.png){fig-align="center"}
+:::
+
+::: {.column width="75%" .fragment}
+![](img/movement_poses_dataset.png){fig-align="center"}
+:::
+::::
+
+::: aside
+Powered by [`xarray`](https://docs.xarray.dev/en/latest/index.html) and its [data structures](https://tutorial.xarray.dev/fundamentals/01_datastructures.html)
+:::
+
+## The movement bboxes dataset {.smaller}
+
+:::: {.columns}
+::: {.column width="25%"}
+![](img/movement_bboxes_schematic.png){fig-align="center"}
+:::
+
+::: {.column width="75%" .fragment}
+![](img/movement_bboxes_dataset.png){fig-align="center"}
+:::
+::::
+
+::: aside
+Powered by [`xarray`](https://docs.xarray.dev/en/latest/index.html) and its [data structures](https://tutorial.xarray.dev/fundamentals/01_datastructures.html)
+:::
+
+## Time to play 🛝 with `movement` {.smaller}
+
+In a terminal, clone [the course repository]({{< meta links.gh-repo >}}) and go to the notebooks directory:
+
+```{.bash code-line-numbers="false"}
+git clone https://github.com/neuroinformatics-unit/course-behavioural-analysis.git
+cd course-behavioural-analysis/notebooks
+```
+
+::: {.fragment}
+Create a new conda environment and install required packages:
+
+```{.bash code-line-numbers="false"}
+conda create -n epm-analysis -c conda-forge python=3.11 pip pytables
+conda activate epm-analysis
+pip install -r notebook_requirements.txt
+```
+:::
+
+::: {.fragment}
+Once all requirements are installed, you can:
+
+- open the `EPM_analysis.ipynb` notebook
+- select the environment `epm-analysis` as the kernel
+
+We will go through the notebook step-by-step, together.
+:::
+
+## Which mouse was more anxious?
+This time, with numbers!
+
+{{< include slides/go_to_menti.qmd >}}
