@@ -57,7 +57,7 @@ Create a new conda environment and install required packages:
 ```{.bash code-line-numbers="false"}
 conda create -n epm-analysis -c conda-forge python=3.11 pip pytables
 conda activate epm-analysis
-pip install -r notebook_requirements.txt
+pip install -r EPM_analysis_requirements.txt
 ```
 :::
 
