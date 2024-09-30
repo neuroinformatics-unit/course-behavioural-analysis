@@ -1,0 +1,42 @@
+# Theory: From behaviour to actions {background-color="#03A062"}
+
+## Discretising the continuous 1/2 {.smaller}
+
+![](img/open-source-tools-fig1b.png){fig-align="center" height="400px"}
+
+::: aside
+source: [{{< meta papers.open-source-title >}}]({{< meta papers.open-source-doi >}})
+:::
+
+## Discretising the continuous 2/2 {.smaller}
+
+![](img/behaviour-classification.png){fig-align="center" height=400px"}
+
+::: aside
+source: [{{< meta papers.quant-behav-title >}}]({{< meta papers.quant-behav-doi >}})
+:::
+
+
+## Supervised vs unsupervised tools { .smaller}
+| **Supervised** | **Unsupervised** |
+|----------------|------------------|
+| [SimBA](https://github.com/sgoldenlab/simba) | [MotionMapper](https://github.com/gordonberman/MotionMapper) |
+| [DeepEthogram](https://github.com/jbohnslav/deepethogram) | [MoSeq (depth- or keypoint-)](https://dattalab.github.io/moseq2-website/index.html) |
+| [JAX Animal Behavior System](https://github.com/KumarLabJax/JABS-behavior-classifier) | [B-SOID](https://github.com/YttriLab/B-SOID) |
+| [MARS](https://github.com/neuroethology/MARS) | [VAME](https://edspace.american.edu/openbehavior/project/vame/) |
+| [DLC2action](https://github.com/amathislab/DLC2action/tree/master) |  |
+
+: {.striped}
+
+::: aside
+Not a complete list!
+:::
+
+
+## Problems with supervised methods
+
+{{< include slides/go_to_menti.qmd >}}
+
+## Problems with unsupervised methods
+
+{{< include slides/go_to_menti.qmd >}}

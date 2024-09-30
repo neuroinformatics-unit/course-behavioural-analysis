@@ -1,5 +1,0 @@
-jupyter
-matplotlib
-xarray[accel]
-shapely
-movement==0.0.11

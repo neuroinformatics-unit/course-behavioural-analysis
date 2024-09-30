@@ -1,0 +1,199 @@
+# Practice: SLEAP I {background-color="#03A062"}
+
+## Which mouse is more anxious? {.smaller}
+
+[Click here to post your answers]({{< meta links.menti-link >}}){preview-link="true" style="text-align: center"}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![sub-01](img/mouse1_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::: {.column width="50%"}
+![sub-02](img/mouse2_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::::
+
+## The Elevated Plus Maze {.smaller}
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](img/mouse1_EPM.gif){fig-align="center" height="400px" style="text-align: center"}
+:::
+
+::: {.column width="50%"}
+- **Structure:** 2 open arms, 2 closed arms, central area
+- Exploits rodents' natural aversion to open spaces and height
+- Less anxious animals spend more time in open arms
+:::
+
+::::
+
+::: {.fragment style="text-align: center; color: #03A062;"}
+**Task**: quantify time spent in open arms / closed arms
+:::
+
+## The dataset
+
+`$ cd behav-analysis-course`
+```{.bash code-line-numbers="false"}
+behav-analysis-course/
+├── LICENSE
+├── README.md
+└── mouse-EPM
+    ├── derivatives
+    └── rawdata
+```
+
+::: {.fragment}
+`$ cd mouse-EPM/rawdata`
+```{.bash code-line-numbers="false"}
+rawdata/
+├── sub-01_ses-01_task-EPM_time-165049_video.mp4
+└── sub-02_ses-01_task-EPM_time-185651_video.mp4
+```
+:::
+
+::: aside
+Roughly following the [NeuroBlueprint](https://neuroblueprint.neuroinformatics.dev/) specification.
+:::
+
+## The SLEAP workflow
+
+![](img/pose-estimation.svg){fig-align="center" height="500px"}
+
+## Create a new project
+
+![](img/SLEAP_screenshots/1_add_videos.png){fig-align="center" height="500px"}
+
+::: aside
+see SLEAP's [Creating a project](https://sleap.ai/tutorials/new-project.html)
+:::
+
+## Define a skeleton {.smaller}
+
+:::: {.columns}
+
+::: {.column width="60%"}
+![](img/mouse-annotated.png){fig-align="center" height="400px"}
+:::
+
+::: {.column width="40%"}
+| Source | Destination |
+|--------|-------------|
+| snout  | left_ear    |
+| snout  | right_ear   |
+| snout  | centre      |
+| left_ear  | centre   |
+| right_ear  | centre  |
+| centre | tail_base   |
+| tail_base | tail_end |
+:::
+::::
+
+:::{style="text-align: center; color: #03A062;"}
+Save the project right after defining the skeleton!
+:::
+
+## Generate labeling suggestions
+![](img/SLEAP_screenshots/5_generate_labelling_suggestions.png){fig-align="center" height="500px"}
+
+## Label initial ~20 frames
+![](img/SLEAP_screenshots/6_labelling.png){fig-align="center" height="500px"}
+
+::: aside
+see SLEAP's [Initial labeling](https://sleap.ai/tutorials/initial-labeling.html)
+:::
+
+## Start a training job 1/3
+![](img/SLEAP_screenshots/7a_training_pipeline.png){fig-align="center" height="500px"}
+
+::: aside
+see SLEAP's [Configuring models](https://sleap.ai/guides/choosing-models.html)
+:::
+
+## Start a training job 2/3
+![](img/SLEAP_screenshots/7b_training_centroid.png){fig-align="center" height="500px"}
+
+::: aside
+see SLEAP's [Configuring models](https://sleap.ai/guides/choosing-models.html)
+:::
+
+## Start a training job 3/3
+![](img/SLEAP_screenshots/7c_training_centered_instance.png){fig-align="center" height="500px"}
+
+::: aside
+see SLEAP's [Configuring models](https://sleap.ai/guides/choosing-models.html)
+:::
+
+## Monitor training progress
+![](img/SLEAP_screenshots/7d_training_progress.png){fig-align="center" height="500px"}
+
+# Coffee break ☕ {background-color="#1E1E1E"}
+
+# Practice: SLEAP II {background-color="#03A062"}
+
+## Evaluate trained models
+![](img/SLEAP_screenshots/8_evaluation.png){fig-align="center" height="500px"}
+
+::: aside
+see also the SLEAP [model evaluation notebook](https://sleap.ai/notebooks/Model_evaluation.html)
+:::
+
+## Run inference on new frames
+![](img/SLEAP_screenshots/9_inference.png){fig-align="center" height="400px"}
+
+::: aside
+- Expect errors on silicon (M1/M2) Macs, see [this discussion](https://github.com/talmolab/sleap/discussions/1151)
+- To correct predictions and update your training data, see SLEAP's  [Prediction-assisted labeling](https://sleap.ai/tutorials/assisted-labeling.html) and [Merging guide](https://sleap.ai/guides/merging.html).
+:::
+
+## Using SLEAP on the HPC cluster
+
+- training and inference are GPU-intensive tasks
+- SLEAP is installed as a module on SWC's HPC cluster
+- `module load sleap`
+- [See this guide for detailed instructions](https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html)
+- [Come to the HPC course tomorrow](https://software-skills.neuroinformatics.dev/courses/hpc-behaviour.html)
+
+## Predictions in the sample dataset {.smaller}
+
+`$ cd behav-analysis-course/mouse-EPM/derivatives`
+```{.bash code-line-numbers="false"}
+derivatives/
+├── software-DLC_predictions
+├── software-SLEAP_project
+    └── predictions
+```
+::: {.fragment}
+- Different pose estimation software produce predictions in different formats.
+- Different workflows are needed for importing predicted poses into `Python` for further analysis.
+  - e.g. for `SLEAP` see [Analysis examples](https://sleap.ai/notebooks/Analysis_examples.html)
+:::
+
+## What happens after pose tracking? {.smaller .scrollable}
+
+:::: {.columns}
+
+::: {.column width="40%"}
+![](img/open-source-tools-fig2a.png)
+:::
+
+::: {.column width="60%"}
+- Load data into Python
+- Visualise and inspect data
+- Clean trajectories:
+  - Identify and drop outliers
+  - Smooth trajectories
+  - Interpolate over missing data
+- Compute variables of interest:
+  - Velocity, acceleration, heading, etc.
+  - Distances/angles between body parts
+  - Time spent in different regions
+  - Application-specific: navigation, social interactions, gait analysis
+:::
+
+::::

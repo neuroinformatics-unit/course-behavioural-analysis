@@ -1,0 +1,11 @@
+video file,season,day type,tide category,present population,present sex ratio,selected observation period start,real time,observation minute from start,crab ID,sex,instantaneous behaviour
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:35,1.00,52,m,shoreline resting
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:35,1.00,68,f,burrowing
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:36,2.00,52,m,shoreline resting
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:36,2.00,68,f,burrowing
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:37,3.00,52,m,shoreline resting
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:37,3.00,68,f,burrowing
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:38,4.00,52,m,shoreline resting
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:38,4.00,68,f,burrowing
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:39,5.00,52,m,swimming
+tub2023-04-23T08_00_00.avi,Spring,Weekend,high,25,21;4,20:34,20:39,5.00,68,f,burrowing
