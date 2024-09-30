@@ -147,7 +147,7 @@ see also the SLEAP [model evaluation notebook](https://sleap.ai/notebooks/Model_
 ![](img/SLEAP_screenshots/9_inference.png){fig-align="center" height="400px"}
 
 ::: aside
-- Expecte errors on silicon (M1/M2) Macs, see [this discussion](https://github.com/talmolab/sleap/discussions/1151)
+- Expect errors on silicon (M1/M2) Macs, see [this discussion](https://github.com/talmolab/sleap/discussions/1151)
 - To correct predictions and update your training data, see SLEAP's  [Prediction-assisted labeling](https://sleap.ai/tutorials/assisted-labeling.html) and [Merging guide](https://sleap.ai/guides/merging.html).
 :::
 
