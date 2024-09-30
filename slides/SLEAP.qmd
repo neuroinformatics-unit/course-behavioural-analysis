@@ -174,7 +174,7 @@ derivatives/
   - e.g. for `SLEAP` see [Analysis examples](https://sleap.ai/notebooks/Analysis_examples.html)
 :::
 
-## What happens after pose tracking? {.smaller}
+## What happens after pose tracking? {.smaller .scrollable}
 
 :::: {.columns}
 
