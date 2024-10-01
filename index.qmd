@@ -152,9 +152,25 @@ If you don't have them, you can create them as follows:
 
 # Practice: keypoint-moseq {background-color="#03A062"}
 
-## `keypoint-moseq` intro {.smaller}
+## `keypoint-moseq` motivation {.smaller}
 
-Insert a brief description of the tool here.
+- Classical depth moseq methods
+- Fails on keypoints because of jitter
+- Sources of jitter: pose estimation errors
+- Smoothing doesn't always help (blurs the boundaries)
+
+## Hierarchical modeling of behaviour {.smaller}
+- Switching linear dynamical systems (SLDS)
+  - explicitly disentangle signal from noise in time-series data
+- Has 3 levels of hierarchy
+  - low-level: kinematics
+  - mid-level: syllables
+  - high-level: behaviours
+
+## `keypoint-moseq` drawbacks {.smaller}
+- probabilistic output (ensemble of models)
+- limited to describing behaviour at a single time-scale
+- may miss rare behaviours (not often seen in training data)
 
 ## Time to play 🛝 with `keypoint-moseq`
 
