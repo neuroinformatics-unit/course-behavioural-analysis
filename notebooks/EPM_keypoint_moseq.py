@@ -114,7 +114,7 @@ print(coordinates["video-1.predictions.analysis"].shape)
 # ax.invert_yaxis()
 
 # %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-# Format data for modeling
+# Format data for modelling
 data, metadata = kpms.format_data(coordinates, confidences, **config())
 
 print(data.keys())
