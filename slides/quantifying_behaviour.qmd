@@ -197,6 +197,10 @@ Many others:
 ...
 :::
 
+## Poll: are you familiar with pose estimation? {.smaller}
+
+{{< include slides/go_to_menti.qmd >}}
+
 ## Multi-animal part grouping {.smaller}
 
 ::: {.r-stack}
