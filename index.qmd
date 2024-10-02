@@ -114,10 +114,10 @@ Sofía Miñano
 
 | Time | Topic | Goals |
 |----|-------|--------|
-| 14:00 - 15:30 | Practice: movement | Load pose tracks into Python, clean and visualise data, compute kinematics |
-| 15:30 - 15:45 | Coffee break | |
-| 15:45 - 16:30 | Theory: From behaviour to actions | Classifying behaviours, action segmentation |
-| 16:30 - 17:30 | Practice: keypoint-moseq | Extract behavioural syllables |
+| 14:00 - 15:45 | Practice: movement | Load pose tracks into Python, clean and visualise data, compute kinematics |
+| 15:45 - 16:00 | Coffee break | |
+| 16:00 - 16:30 | Theory: From behaviour to actions | Approaches to action segmentation |
+| 16:15 - 17:30 | Demo: keypoint-moseq | Extract behavioural syllables |
 
 : {.striped}
 
@@ -150,7 +150,7 @@ If you don't have them, you can create them as follows:
 
 {{< include slides/from_behaviour_to_actions.qmd >}}
 
-# Practice: keypoint-moseq {background-color="#03A062"}
+# Demo: keypoint-moseq {background-color="#03A062"}
 
 ## `keypoint-moseq` motivation {.smaller}
 
