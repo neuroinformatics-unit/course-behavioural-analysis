@@ -1,0 +1,120 @@
+# Demo: Keypoint-MoSeq {background-color="#03A062"}
+
+## Motion Sequencing {.smaller}
+
+::: {layout="[[1,1,2]]"}
+
+![Depth video recordings](img/depth-moseq.gif){fig-align="center" style="text-align: center" height="225px"}
+
+![AR-HMM](img/depth-moseq-diagram.png){fig-align="center" style="text-align: center" height="225px"}
+
+![depth-MoSeq](img/depth-moseq-syllables.png){fig-align="center" style="text-align: center" height="225px"}
+
+:::
+
+::: {.incremental}
+- Timescale is controlled by the `kappa` parameter
+- Higher `kappa` > higher P(self-transition) > "stickier" states > longer syllables
+:::
+
+::: aside
+source: [{{< meta papers.moseq-title >}}]({{< meta papers.moseq-doi >}})
+:::
+
+## Keypoint-MoSeq {.smaller}
+
+Can we apply MoSeq to keypoint data (predicted poses)?
+
+![](img/depth-vs-keypoint-moseq.png){fig-align="center" height="350px"}
+
+::: aside
+source: [{{< meta papers.keypoint-moseq-title >}}]({{< meta papers.keypoint-moseq-doi >}})
+:::
+
+## Problems with keypoint data {.smaller}
+
+::::: {.columns}
+
+:::: {.column width="70%"}
+![](img/keypoint-errors.png){width="600px"}
+
+![](img/keypoint-jitter){width="610px"}
+::::
+
+:::: {.column width="30%"}
+
+::: {.incremental}
+- Keypoint noise leads to artifactual syllables
+- We should somehow isolate true pose from noise
+- But smoothing also blurs syllable boundaries
+:::
+::::
+
+:::::
+
+::: aside
+source: [{{< meta papers.keypoint-moseq-title >}}]({{< meta papers.keypoint-moseq-doi >}})
+:::
+
+
+## Solution: a more complex model {.smaller}
+
+**Switching Linear Dynamical System (SLDS):** combine noise-removal and action segmentation in a single probabilistic model
+
+:::: {layout="[[1,1]]"}
+![](img/moseq-model-diagrams.png)
+
+::: {.r-stack}
+![](img/allocentric-poses.png){.fragment}
+
+![](img/egocentric-alignment.png){.fragment}
+
+![](img/keypoint-moseq-modeling.png){.fragment}
+:::
+
+::::
+
+
+## Keypoint-MoSeq drawbacks
+
+::: {.incremental}
+- probabilistic output
+  - stochasticity of output syllables
+  - must fit ensemble of models and take a "consensus"
+- limited to describing behaviour at a single time-scale
+  - but can be adapted by tuning `kappa`
+- may miss rare behaviours (not often seen in training data)
+:::
+
+## Let's look at some syllables {.smaller}
+
+We've trained a keypoint-MoSeq model on 10 videos from the (EPM) dataset.
+
+```{.bash code-line-numbers="false"}
+mouse-EPM/
+├── derivatives
+│   └── software-kptmoseq_n-10_project
+└── rawdata
+```
+
+::: {.fragment}
+![](img/all_trajectories.gif){fig-align="center" height="400px"}
+:::
+
+::: aside
+The model was trained using the [EPM_train_keypoint_moseq.ipynb]({{< meta links.gh-repo >}}/blob/main/notebooks/EPM_train_keypoint_moseq.ipynb) notebook in the course's
+[GitHub repository]({{< meta links.gh-repo >}}).
+:::
+
+
+## Time to play 🛝 with Keypoint-MoSeq
+
+We will use the trained model to extract syllables from a new video.
+
+::: {.fragment}
+- Navigate to the same repository you cloned earlier `cd course-behavioural-analysis/notebooks`
+- open the `EPM_syllables.ipynb` notebook
+- select the environment `keypoint_moseq` as the kernel
+
+We will go through the notebook step-by-step, together.
+:::
