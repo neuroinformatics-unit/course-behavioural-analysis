@@ -3,3 +3,5 @@ index_files/
 build/
 .DS_Store
 slack_bot.py
+.ipynb_checkpoints/
+.idea/
