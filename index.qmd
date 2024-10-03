@@ -54,7 +54,7 @@ links:
   dropbox: "https://tinyurl.com/behav-analysis-course-data"
   menti: "https://www.menti.com/"
   menti-link: "https://www.menti.com/aldg47maopsr"
-  menti-code: "`5804 2245`"
+  menti-code: "`5524 7145`"
 papers:
   neuro-needs-behav-title: "Neuroscience Needs Behavior: Correcting a Reductionist Bias"
   neuro-needs-behav-doi: "https://www.sciencedirect.com/science/article/pii/S0896627316310406"
@@ -62,6 +62,10 @@ papers:
   quant-behav-doi: "https://www.nature.com/articles/s41593-020-00734-z"
   open-source-title: "Open-source tools for behavioral video analysis: Setup, methods, and best practices"
   open-source-doi: "https://elifesciences.org/articles/79305"
+  moseq-title: "Mapping Sub-Second Structure in Mouse Behavior"
+  moseq-doi: "https://doi.org/10.1016/j.neuron.2015.11.031"
+  keypoint-moseq-title: "Keypoint-MoSeq: parsing behavior by linking point tracking to pose dynamics"
+  keypoint-moseq-doi: "https://doi.org/10.1038/s41592-024-02318-2"
 ---
 
 # Introductions
@@ -114,10 +118,10 @@ Sofía Miñano
 
 | Time | Topic | Goals |
 |----|-------|--------|
-| 14:00 - 15:30 | Practice: movement | Load pose tracks into Python, clean and visualise data, compute kinematics |
-| 15:30 - 15:45 | Coffee break | |
-| 15:45 - 16:30 | Theory: From behaviour to actions | Classifying behaviours, action segmentation |
-| 16:30 - 17:30 | Practice: keypoint-moseq | Extract behavioural syllables |
+| 14:00 - 15:45 | Practice: movement | Load pose tracks into Python, clean and visualise data, compute kinematics |
+| 15:45 - 16:00 | Coffee break | |
+| 16:00 - 16:30 | Theory: From behaviour to actions | Approaches to action segmentation |
+| 16:15 - 17:30 | Demo: Keypoint-MoSeq | Extract behavioural syllables |
 
 : {.striped}
 
@@ -149,24 +153,8 @@ If you don't have them, you can create them as follows:
 # Coffee break ☕ {background-color="#1E1E1E"}
 
 {{< include slides/from_behaviour_to_actions.qmd >}}
-
-# Practice: keypoint-moseq {background-color="#03A062"}
-
-## `keypoint-moseq` intro {.smaller}
-
-Insert a brief description of the tool here.
-
-## Time to play 🛝 with `keypoint-moseq`
-
-::: {.incremental}
-- Navigate to the same repository you cloned earlier `cd course-behavioural-analysis/notebooks`
-- open the `EPM_syllables.ipynb` notebook
-- select the environment `keypoint_moseq` as the kernel
-:::
-
-::: {.fragment}
-We will go through the notebook step-by-step, together.
-:::
+  
+{{< include slides/keypoint_moseq.qmd >}}
 
 # Feedback
 
