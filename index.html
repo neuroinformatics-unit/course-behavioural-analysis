@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script><script src="index_files/libs/clipboard/clipboard.min.js"></script>
 <script src="index_files/libs/quarto-html/tabby.min.js"></script>
 <script src="index_files/libs/quarto-html/popper.min.js"></script>
 <script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
@@ -8,9 +8,9 @@
 <link href="index_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="index_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="index_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.450">
+  <meta name="generator" content="quarto-1.5.57">
 
-  <meta name="author" content="Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder">
+  <meta name="author" content="Niko Sirmpilatze, Chang Huan Lo, Sofía Miñano">
   <title>Video-based analysis of animal behaviour</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -31,7 +31,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -42,7 +42,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -223,7 +223,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -310,7 +311,6 @@
     }
     .reveal .slide:not(.center) {
       height: 100%;
-      overflow-y: auto;
     }
     .reveal .slide.scrollable {
       overflow-y: auto;
@@ -387,10 +387,9 @@
       margin-right: 0; 
     }
   </style>
-  <meta name="mermaid-theme" content="neutral">
-  <script src="index_files/libs/quarto-diagram/mermaid.min.js"></script>
-  <script src="index_files/libs/quarto-diagram/mermaid-init.js"></script>
-  <link href="index_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.6/require.min.js" integrity="sha512-c3Nl8+7g4LMSTdrm621y7kf9v3SDPnhxLNhcjFJbKECVnmZHTdo+IRO05sNLTH/D3vA6u1X32ehoLC7WFVdheg==" crossorigin="anonymous"></script>
+  
+  <script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -403,106 +402,166 @@
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
 <div class="quarto-title-author-name">
-Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder 
+Niko Sirmpilatze, Chang Huan Lo, Sofía Miñano 
 </div>
 </div>
 </div>
 
 </section>
-<section id="introductions" class="slide level2">
-<h2>Introductions</h2>
-<p><a href="https://neuroinformatics.dev/" data-preview-link="true" style="text-align: center">Neuroinformatics Unit (NIU)</a></p>
+<section>
+<section id="introductions" class="title-slide slide level1 center">
+<h1>Introductions</h1>
+<p><a href="https://neuroinformatics.dev/" style="text-align: center">Neuroinformatics Unit (NIU)</a></p>
 <div class="columns">
 <div class="column" style="width:33%;">
 <p><img data-src="img/niko_sirmpilatze.png"> Niko Sirmpilatze</p>
 </div><div class="column" style="width:33%;">
 <p><img data-src="img/chang_huan_lo.png"> Chang Huan Lo</p>
 </div><div class="column" style="width:33%;">
-<p><img data-src="img/alessandro_felder.png"> Alessandro Felder</p>
-</div>
-</div>
+<p><img data-src="img/sofia_minano.png"> Sofía Miñano</p>
+</div></div>
 </section>
+<section id="course-materials" class="slide level2">
+<h2>Course materials</h2>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Slides</strong></th>
+<th><a href="https://neuroinformatics.dev/course-behavioural-analysis/#/title-slide">neuroinformatics.dev/course-behavioural-analysis</a></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Webpage</td>
+<td><a href="https://software-skills.neuroinformatics.dev/courses/video-analysis.html">software-skills.neurinformatics.dev/course-behavioural-analysis</a></td>
+</tr>
+<tr class="even">
+<td>GitHub</td>
+<td><a href="https://github.com/neuroinformatics-unit/course-behavioural-analysis">github.com/neuroinformatics-unit/course-behavioural-analysis</a></td>
+</tr>
+<tr class="odd">
+<td>Data*</td>
+<td><a href="https://tinyurl.com/behav-analysis-course-data">tinyurl.com/behav-analysis-course-data</a></td>
+</tr>
+</tbody>
+</table>
+
+<aside><div>
+<p>*Data produced and shared by <a href="https://www.sainsburywellcome.org/web/people/loukia-katsouri"><em>Loukia Katsouri, O’Keefe Lab</em></a></p>
+</div></aside></section>
 <section id="schedule-morning" class="slide level2 smaller">
 <h2>Schedule: morning</h2>
-<p><strong>10:00 - 10:20: Welcome and troubleshooting</strong></p>
-<p><strong>10:20 - 11:00: Background</strong></p>
-<ul>
-<li>What is behaviour and why do we study it?</li>
-<li>Tracking animals with pose estimation</li>
-</ul>
-<p><strong>11:00 - 12:00: Practice with SLEAP</strong></p>
-<ul>
-<li>Annotate video frames</li>
-<li>Train a pose estimation model</li>
-</ul>
-<p><strong>12:00 - 13:30: Lunch break and SWC lab meeting</strong></p>
+<table class="table-striped caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 36%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Topic</th>
+<th>Goals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>10:00 - 10:20</td>
+<td>Welcome</td>
+<td>Introductions, troubleshooting</td>
+</tr>
+<tr class="even">
+<td>10:20 - 11:00</td>
+<td>Theory: Quantifying Behaviour</td>
+<td>What is behaviour, detection &amp; tracking, pose estimation</td>
+</tr>
+<tr class="odd">
+<td>11:00 - 12:00</td>
+<td>Practice: SLEAP I</td>
+<td>Label data, train models</td>
+</tr>
+<tr class="even">
+<td>12:00 - 12:15</td>
+<td>Coffee Break</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>12:15 - 13:00</td>
+<td>Practice: SLEAP II</td>
+<td>Evaluate models, run inference</td>
+</tr>
+<tr class="even">
+<td>13:00 - 14:00</td>
+<td>Lunch break</td>
+<td></td>
+</tr>
+</tbody>
+</table>
 </section>
 <section id="schedule-afternoon" class="slide level2 smaller">
 <h2>Schedule: afternoon</h2>
-<p><strong>13:30 - 14:30: Practice with SLEAP cont.</strong></p>
-<ul>
-<li>Evaluate trained models</li>
-<li>Run inference</li>
-</ul>
-<p><strong>14:30 - 15:00: Coffee break and discussion</strong></p>
-<p><strong>15:00 - 16:30: Practice with Jupyter notebook</strong></p>
-<ul>
-<li>Load and visualise pose tracks</li>
-<li>Filter pose tracks</li>
-<li>Quantify time spent in ROIs</li>
-</ul>
-<p><strong>16:30 - 17:00: Further discussion</strong></p>
-<ul>
-<li>Behaviour classification and action segmentation</li>
-</ul>
+<table class="table-striped caption-top">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 36%">
+<col style="width: 42%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Time</th>
+<th>Topic</th>
+<th>Goals</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>14:00 - 15:45</td>
+<td>Practice: movement</td>
+<td>Load pose tracks into Python, clean and visualise data, compute kinematics</td>
+</tr>
+<tr class="even">
+<td>15:45 - 16:00</td>
+<td>Coffee break</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>16:00 - 16:30</td>
+<td>Theory: From behaviour to actions</td>
+<td>Approaches to action segmentation</td>
+</tr>
+<tr class="even">
+<td>16:15 - 17:30</td>
+<td>Demo: Keypoint-MoSeq</td>
+<td>Extract behavioural syllables</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="course-materials" class="slide level2 smaller">
-<h2>Course materials</h2>
-<h4 id="these-slides">These slides</h4>
-<ul>
-<li><a href="https://neuroinformatics.dev/course-behavioural-analysis/#/title-slide">neuroinformatics.dev/course-behavioural-analysis</a></li>
-</ul>
-<h4 id="course-webpage">Course webpage</h4>
-<ul>
-<li><a href="https://software-skills.neuroinformatics.dev/courses/video-analysis.html">software-skills.neurinformatics.dev/course-behavioural-analysis</a></li>
-</ul>
-<h4 id="github-repository">GitHub repository</h4>
-<ul>
-<li><a href="https://github.com/neuroinformatics-unit/course-behavioural-analysis">github.com/neuroinformatics-unit/course-behavioural-analysis</a></li>
-</ul>
-<h4 id="sample-data">Sample data</h4>
-<ul>
-<li><a href="https://www.dropbox.com/scl/fo/ey7b6yrqax2olqyv1th7j/h?rlkey=u4wh2gxtbbn4g5o3s55zbx6pp&amp;dl=0">Dropbox link</a> OR…</li>
-<li><code>/ceph/scratch/neuroinformatics-dropoff/behav-analysis-course</code></li>
-<li>credits to <a href="https://www.sainsburywellcome.org/web/people/loukia-katsouri"><em>Loukia Katsouri, O’Keefe Lab</em></a></li>
-</ul>
-</section>
-<section id="install-sleap-via-conda" class="slide level2 smaller">
-<h2>Install SLEAP via conda</h2>
-<p>Read the official <a href="https://sleap.ai/installation.html">SLEAP installation guide</a>. If you already have <code>conda</code> installed, you may skip the <code>mamba</code> installation steps outlined there. Instead, install the <code>libmamba-solver</code> for <code>conda</code>:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1"></a><span class="ex">conda</span> install <span class="at">-n</span> base conda-libmamba-solver</span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="ex">conda</span> config <span class="at">--set</span> solver libmamba</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="install-software-requirements" class="slide level2 smaller">
+<h2>Install software requirements</h2>
+<p>You were asked to pre-install two <code>conda</code> environments for the practical exercises. Check that you have them installed:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> conda env list</span>
+<span id="cb1-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">sleap</span></span>
+<span id="cb1-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">keypoint_moseq</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
-<p>After that, you can follow the <a href="https://sleap.ai/installation.html#conda-package">rest of the SLEAP installation guide</a>, substituting <code>conda</code> for <code>mamba</code> in the relevant commands.</p>
-<div class="panel-tabset">
-<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">Windows &amp; Linux</a></li><li><a href="#tabset-1-2">MacOS</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1">
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1"></a><span class="ex">conda</span> create <span class="at">-y</span> <span class="at">-n</span> sleap <span class="at">-c</span> conda-forge <span class="at">-c</span> nvidia <span class="at">-c</span> sleap <span class="at">-c</span> anaconda sleap=1.3.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If you don’t have them, you can create them as follows:</p>
+<ol type="1">
+<li><a href="https://sleap.ai/"><strong>SLEAP</strong></a>: Use the <a href="https://sleap.ai/installation.html#conda-package">conda package method</a> from the SLEAP installation guide.</li>
+<li><a href="https://keypoint-moseq.readthedocs.io"><strong>Keypoint-MoSeq</strong></a>: Use the recommended <a href="https://keypoint-moseq.readthedocs.io/en/latest/install.html#install-using-conda">conda installation method</a>.</li>
+</ol>
 </div>
-<div id="tabset-1-2">
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1"></a><span class="ex">conda</span> create <span class="at">-y</span> <span class="at">-n</span> sleap <span class="at">-c</span> conda-forge <span class="at">-c</span> anaconda <span class="at">-c</span> sleap sleap=1.3.1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</div>
-</div>
-</div>
+</section></section>
+<section>
+<section id="theory-quantifying-behaviour" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Theory: Quantifying Behaviour</h1>
+
 </section>
 <section id="what-is-behaviour" class="slide level2">
 <h2>What is behaviour?</h2>
 <p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true">Answer on mentimeter</a></p>
 
 <aside><div>
-<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5306 9550</code></p>
+<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5524 7145</code></p>
 </div></aside></section>
 <section id="defining-behaviour" class="slide level2 smaller">
 <h2>Defining behaviour</h2>
@@ -524,60 +583,43 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <aside><div>
 <p>source: <a href="https://www.sciencedirect.com/science/article/pii/S0896627316310406">Neuroscience Needs Behavior: Correcting a Reductionist Bias</a></p>
 </div></aside></section>
-<section id="neural-activity-and-behaviour" class="slide level2 smaller">
-<h2>Neural activity and behaviour</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/neuro_behav_mappings.png" height="500"></p>
-</figure>
-</div>
+<section id="why-does-neuroscience-need-behaviour" class="slide level2">
+<h2>Why does neuroscience need behaviour?</h2>
+<p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true">Answer on mentimeter</a></p>
 
 <aside><div>
-<p>source: <a href="https://www.sciencedirect.com/science/article/pii/S0896627316310406">Neuroscience Needs Behavior: Correcting a Reductionist Bias</a></p>
+<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5524 7145</code></p>
 </div></aside></section>
-<section id="marrs-three-levels-of-analysis" class="slide level2 smaller">
-<h2>Marr’s three levels of analysis</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="img/marr_three_levels.png" height="500"></p>
-</figure>
-</div>
-
-<aside><div>
-<p>source: <a href="https://www.sciencedirect.com/science/article/pii/S0896627316310406">Neuroscience Needs Behavior: Correcting a Reductionist Bias</a></p>
-</div></aside></section>
-<section id="neuroscience-needs-behaviour" class="slide level2 smaller">
-<h2>Neuroscience needs behaviour</h2>
-<div class="fragment">
+<section id="neuroscience-needs-behaviour-12" class="slide level2 smaller">
+<h2>Neuroscience needs behaviour 1/2</h2>
 <blockquote>
 <p>…detailed examination of brain parts or their selective perturbation is not sufficient to understand how the brain generates behavior</p>
 </blockquote>
-</div>
-<div class="fragment">
 <blockquote>
 <p>…it is very hard to infer the mapping between the behavior of a system and its lower-level properties by only looking at the lower-level properties</p>
 </blockquote>
-</div>
-<div class="fragment">
 <blockquote>
 <p>The behavioral work needs to be as fine-grained as work at the neural level. Otherwise one is imperiled by a granularity mismatch between levels…</p>
 </blockquote>
-</div>
-<div class="fragment">
+
+<aside><div>
+<p>source: <a href="https://www.sciencedirect.com/science/article/pii/S0896627316310406">Neuroscience Needs Behavior: Correcting a Reductionist Bias</a></p>
+</div></aside></section>
+<section id="neuroscience-needs-behaviour-22" class="slide level2 smaller scrollable">
+<h2>Neuroscience needs behaviour 2/2</h2>
 <blockquote>
-<p>…the explanations of the results at the neural level are almost entirely dependent on the higher-level vocabulary and concepts derived from behavioral work. Lower levels of explanation do not “explain away” higher levels.</p>
+<p>The Datta lab <strong>embraces the perspective of the ethologists: if we are to understand how the brain works, we need to think about the actual problems it evolved to solve</strong>. Addressing this challenge means studying natural behavior — the kinds of behaviors generated by animals when they are free to act on their own internally-generated goals without physical or psychological restraint…really, the kinds of behaviors you see when you watch lions in the wild, mice in a home cage, or humans at the mall. Importantly, when one observes animals expressing spontaneous, self-generated behavior, it is clear that much of what they are doing is exploring the world — using movement to sense what is out there, and taking advantage of sensation to inform future movements. Answering the question — how does the brain give rise to natural behavior? — therefore requires understanding how sensory and motor systems are usefully intertwined to support cognition.</p>
 </blockquote>
-</div>
-<div style="text-align: right">
-<p><em>Krakauer et al., 2017</em></p>
-</div>
-</section>
+
+<aside><div>
+<p>source: <a href="http://datta.hms.harvard.edu/research/overview/">Datta Lab website</a></p>
+</div></aside></section>
 <section id="quantifying-behaviour-ethogram" class="slide level2 smaller">
 <h2>Quantifying behaviour: ethogram</h2>
 <blockquote>
 <p><strong>Ethogram:</strong> a list of typical behaviours performed by an animal, including when and how often they occur</p>
 </blockquote>
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Time after start (min)</th>
@@ -614,103 +656,246 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 </tbody>
 </table>
 </section>
+<section id="crab-ethogram-example" class="slide level2 smaller">
+<h2>Crab ethogram example</h2>
+<div id="1903d267" class="cell" data-execution_count="1">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_fbf70_row0_col0, #T_fbf70_row0_col1, #T_fbf70_row0_col2, #T_fbf70_row1_col0, #T_fbf70_row1_col1, #T_fbf70_row1_col2, #T_fbf70_row2_col0, #T_fbf70_row2_col1, #T_fbf70_row2_col2, #T_fbf70_row3_col0, #T_fbf70_row3_col1, #T_fbf70_row3_col2, #T_fbf70_row4_col0, #T_fbf70_row4_col1, #T_fbf70_row4_col2 {
+  text-align: left;
+}
+</style>
+
+<table id="T_fbf70" class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_fbf70_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">Parent category</th>
+<th id="T_fbf70_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">Instantaneous behaviour</th>
+<th id="T_fbf70_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">definition</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_fbf70_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_fbf70_row0_col0" class="data row0 col0">locomotion</td>
+<td id="T_fbf70_row0_col1" class="data row0 col1">foraging</td>
+<td id="T_fbf70_row0_col2" class="data row0 col2">Foraging for detritus and small organisms on mudflats or in shallow waters. Dactyl(s) is moving towards the mouth.</td>
+</tr>
+<tr class="even">
+<td id="T_fbf70_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_fbf70_row1_col0" class="data row1 col0">resting</td>
+<td id="T_fbf70_row1_col1" class="data row1 col1">burrowing</td>
+<td id="T_fbf70_row1_col2" class="data row1 col2">The crab is observed resting in its burrow. There are no conspecific interactions.</td>
+</tr>
+<tr class="odd">
+<td id="T_fbf70_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_fbf70_row2_col0" class="data row2 col0">locomotion?</td>
+<td id="T_fbf70_row2_col1" class="data row2 col1">entering burrow</td>
+<td id="T_fbf70_row2_col2" class="data row2 col2">Actively entering an uninhabited burrow.</td>
+</tr>
+<tr class="even">
+<td id="T_fbf70_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_fbf70_row3_col0" class="data row3 col0">locomotion?</td>
+<td id="T_fbf70_row3_col1" class="data row3 col1">exiting burrow</td>
+<td id="T_fbf70_row3_col2" class="data row3 col2">Actively exiting a burrow.</td>
+</tr>
+<tr class="odd">
+<td id="T_fbf70_level0_row4" class="row_heading level0 row4" data-quarto-table-cell-role="th">4</td>
+<td id="T_fbf70_row4_col0" class="data row4 col0">locomotion?</td>
+<td id="T_fbf70_row4_col1" class="data row4 col1">maintaining burrow</td>
+<td id="T_fbf70_row4_col2" class="data row4 col2">Digging and excavating burrows, carrying sediment to/from the burrow entrance.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<aside><div>
+<p>Credit to <a href="https://www.sainsburywellcome.org/web/people/sanna-titus"><em>Sanna Titus, Branco &amp; Margrie Labs</em></a></p>
+</div></aside></section>
+<section id="crab-ethogram-data-collection" class="slide level2 smaller" data-visibility="uncounted">
+<h2>Crab ethogram data collection</h2>
+<div id="f51b2481" class="cell" data-execution_count="2">
+<div class="cell-output cell-output-display">
+<style type="text/css">
+#T_63e81_row0_col0, #T_63e81_row0_col1, #T_63e81_row0_col2, #T_63e81_row0_col3, #T_63e81_row0_col4, #T_63e81_row0_col5, #T_63e81_row0_col6, #T_63e81_row0_col7, #T_63e81_row0_col8, #T_63e81_row1_col0, #T_63e81_row1_col1, #T_63e81_row1_col2, #T_63e81_row1_col3, #T_63e81_row1_col4, #T_63e81_row1_col5, #T_63e81_row1_col6, #T_63e81_row1_col7, #T_63e81_row1_col8, #T_63e81_row2_col0, #T_63e81_row2_col1, #T_63e81_row2_col2, #T_63e81_row2_col3, #T_63e81_row2_col4, #T_63e81_row2_col5, #T_63e81_row2_col6, #T_63e81_row2_col7, #T_63e81_row2_col8, #T_63e81_row3_col0, #T_63e81_row3_col1, #T_63e81_row3_col2, #T_63e81_row3_col3, #T_63e81_row3_col4, #T_63e81_row3_col5, #T_63e81_row3_col6, #T_63e81_row3_col7, #T_63e81_row3_col8 {
+  text-align: left;
+}
+</style>
+
+<table id="T_63e81" class="caption-top" data-quarto-postprocess="true">
+<thead>
+<tr class="header">
+<th class="blank level0" data-quarto-table-cell-role="th">&nbsp;</th>
+<th id="T_63e81_level0_col0" class="col_heading level0 col0" data-quarto-table-cell-role="th">video file</th>
+<th id="T_63e81_level0_col1" class="col_heading level0 col1" data-quarto-table-cell-role="th">tide category</th>
+<th id="T_63e81_level0_col2" class="col_heading level0 col2" data-quarto-table-cell-role="th">present population</th>
+<th id="T_63e81_level0_col3" class="col_heading level0 col3" data-quarto-table-cell-role="th">selected observation period start</th>
+<th id="T_63e81_level0_col4" class="col_heading level0 col4" data-quarto-table-cell-role="th">real time</th>
+<th id="T_63e81_level0_col5" class="col_heading level0 col5" data-quarto-table-cell-role="th">observation minute from start</th>
+<th id="T_63e81_level0_col6" class="col_heading level0 col6" data-quarto-table-cell-role="th">crab ID</th>
+<th id="T_63e81_level0_col7" class="col_heading level0 col7" data-quarto-table-cell-role="th">sex</th>
+<th id="T_63e81_level0_col8" class="col_heading level0 col8" data-quarto-table-cell-role="th">instantaneous behaviour</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td id="T_63e81_level0_row0" class="row_heading level0 row0" data-quarto-table-cell-role="th">0</td>
+<td id="T_63e81_row0_col0" class="data row0 col0">tub2023-04-23T08_00_00.avi</td>
+<td id="T_63e81_row0_col1" class="data row0 col1">high</td>
+<td id="T_63e81_row0_col2" class="data row0 col2">25</td>
+<td id="T_63e81_row0_col3" class="data row0 col3">20:34</td>
+<td id="T_63e81_row0_col4" class="data row0 col4">20:35</td>
+<td id="T_63e81_row0_col5" class="data row0 col5">1.000000</td>
+<td id="T_63e81_row0_col6" class="data row0 col6">52</td>
+<td id="T_63e81_row0_col7" class="data row0 col7">m</td>
+<td id="T_63e81_row0_col8" class="data row0 col8">shoreline resting</td>
+</tr>
+<tr class="even">
+<td id="T_63e81_level0_row1" class="row_heading level0 row1" data-quarto-table-cell-role="th">1</td>
+<td id="T_63e81_row1_col0" class="data row1 col0">tub2023-04-23T08_00_00.avi</td>
+<td id="T_63e81_row1_col1" class="data row1 col1">high</td>
+<td id="T_63e81_row1_col2" class="data row1 col2">25</td>
+<td id="T_63e81_row1_col3" class="data row1 col3">20:34</td>
+<td id="T_63e81_row1_col4" class="data row1 col4">20:35</td>
+<td id="T_63e81_row1_col5" class="data row1 col5">1.000000</td>
+<td id="T_63e81_row1_col6" class="data row1 col6">68</td>
+<td id="T_63e81_row1_col7" class="data row1 col7">f</td>
+<td id="T_63e81_row1_col8" class="data row1 col8">burrowing</td>
+</tr>
+<tr class="odd">
+<td id="T_63e81_level0_row2" class="row_heading level0 row2" data-quarto-table-cell-role="th">2</td>
+<td id="T_63e81_row2_col0" class="data row2 col0">tub2023-04-23T08_00_00.avi</td>
+<td id="T_63e81_row2_col1" class="data row2 col1">high</td>
+<td id="T_63e81_row2_col2" class="data row2 col2">25</td>
+<td id="T_63e81_row2_col3" class="data row2 col3">20:34</td>
+<td id="T_63e81_row2_col4" class="data row2 col4">20:36</td>
+<td id="T_63e81_row2_col5" class="data row2 col5">2.000000</td>
+<td id="T_63e81_row2_col6" class="data row2 col6">52</td>
+<td id="T_63e81_row2_col7" class="data row2 col7">m</td>
+<td id="T_63e81_row2_col8" class="data row2 col8">shoreline resting</td>
+</tr>
+<tr class="even">
+<td id="T_63e81_level0_row3" class="row_heading level0 row3" data-quarto-table-cell-role="th">3</td>
+<td id="T_63e81_row3_col0" class="data row3 col0">tub2023-04-23T08_00_00.avi</td>
+<td id="T_63e81_row3_col1" class="data row3 col1">high</td>
+<td id="T_63e81_row3_col2" class="data row3 col2">25</td>
+<td id="T_63e81_row3_col3" class="data row3 col3">20:34</td>
+<td id="T_63e81_row3_col4" class="data row3 col4">20:36</td>
+<td id="T_63e81_row3_col5" class="data row3 col5">2.000000</td>
+<td id="T_63e81_row3_col6" class="data row3 col6">68</td>
+<td id="T_63e81_row3_col7" class="data row3 col7">f</td>
+<td id="T_63e81_row3_col8" class="data row3 col8">burrowing</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<aside><div>
+<p>Credit to <a href="https://www.sainsburywellcome.org/web/people/sanna-titus"><em>Sanna Titus, Branco &amp; Margrie Labs</em></a></p>
+</div></aside></section>
 <section id="quantifying-behaviour-modern" class="slide level2 smaller">
 <h2>Quantifying behaviour: modern</h2>
 <div class="columns">
 <div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/modern_behav_experiment_analysis.png" height="400"></p>
+<p><img data-src="img/modern_behav_experiment_analysis.png" class="quarto-figure quarto-figure-center" height="400"></p>
 </figure>
 </div>
 </div><div class="column" style="width:30%;">
-<div class="cell" data-reveal="true" data-file="img/video_pipeline.mmd" data-fig-height="400px">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-
-    video --&gt;|compression/re-encoding | video2["compressed video"]
-    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
-    tracks --&gt; |calculations| kinematics
-    tracks --&gt;|classifiers| actions["actions / behav syllables"]
-    video2 --&gt; |comp vision| actions</pre>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/open-source-tools-fig2a.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
 </div>
-</div>
-</div>
-</div>
-</div>
-</div>
+</div></div>
 
 <aside><div>
 <p>source: <a href="https://elifesciences.org/articles/79305">Open-source tools for behavioral video analysis: Setup, methods, and best practices</a></p>
 </div></aside></section>
-<section id="finding-and-tracking-animals" class="slide level2 smaller">
-<h2>Finding and tracking animals</h2>
-<div class="quarto-layout-panel" data-fig-align="center" height="180px">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<section id="detection" class="slide level2 smaller">
+<h2>Detection</h2>
+<div class="r-stack">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-fig-align="center" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="img/mouse-frame.png"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-mask.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="img/mouse-centroid.png"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img data-src="img/mouse-ellipse.png"></p>
-</div>
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img data-src="img/mouse-pose-estimation.png"></p>
 </div>
 </div>
+<div>
+
 </div>
-<div class="fragment quarto-layout-panel" data-fig-align="center" height="180px">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img data-src="img/mouse-centroid-tracking.png"></p>
+<div class="quarto-layout-panel" data-fig-align="center" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-frame.png"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
-<p><img data-src="img/mouse-ellipse-tracking.png"></p>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-bbox.png" class="fragment"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-pose-estimation.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="tracking" class="slide level2 smaller">
+<h2>Tracking</h2>
+<div class="r-stack">
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-fig-align="center" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-centroid-tracking-single-animal.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-bbox-tracking-single-animal.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="img/mouse-pose-tracking-single-animal.png"></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: center;">
+</div>
+</div>
+<div>
+
+</div>
+<div class="fragment quarto-layout-panel" data-fig-align="center" data-layout-ncol="3">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-centroid-tracking-multi-animal.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
+<p><img data-src="img/mouse-bbox-tracking-multi-animal.png"></p>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <p><img data-src="img/mouse-pose-tracking-multi-animal.png"></p>
+</div>
 </div>
 </div>
 </div>
 </section>
 <section id="pose-estimation" class="slide level2 smaller">
 <h2>Pose estimation</h2>
-<div class="columns">
-<div class="column" style="width:70%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pose_estimation_2D.png"></p>
+<p><img data-src="img/pose_estimation_2D.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
-</div>
-</div><div class="column" style="width:30%;">
-<div class="cell" data-reveal="true" data-file="img/video_pipeline_pose.mmd" data-fig-height="400px">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-    classDef emphasis fill:#03A062;
-
-    video --&gt;|compression/re-encoding | video2["compressed video"]
-    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
-    tracks --&gt; |calculations| kinematics
-    tracks --&gt;|classifiers| actions["actions / behav syllables"]
-    video2 --&gt; |comp vision| actions
-
-    linkStyle 1 stroke:#03A062, color:;
-    class video2 emphasis
-    class tracks emphasis</pre>
-</div>
-</div>
-</div>
-</div>
-</div>
 </div>
 <ul>
 <li>“easy” in humans - vast amounts of data</li>
@@ -727,39 +912,43 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <p><a href="http://www.mackenziemathislab.org/deeplabcut">DeepLabCut</a>: <em>transfer learning</em></p>
 </div><div class="column" style="width:50%;">
 <p><a href="https://sleap.ai/">SLEAP</a>:<em>smaller networks</em></p>
-</div>
-</div>
+</div></div>
 <div class="quarto-figure quarto-figure-center" style="text-align: center">
 <figure>
-<p><img data-src="img/sleap_movie.gif" height="400"></p>
+<p><img data-src="img/sleap_movie.gif" height="350"></p>
 <figcaption>source: <a href="https://sleap.ai/">sleap.ai</a></figcaption>
 </figure>
 </div>
+<p>These handle pose estimation (detection) and tracking of single/multiple animals.</p>
 
 <aside><div>
 <p>Many others: <a href="https://github.com/danbider/lightning-pose">LightningPose</a>, <a href="https://github.com/jgraving/DeepPoseKit">DeepPoseKit</a>, <a href="https://anipose.readthedocs.io/en/latest/">Anipose</a>, …</p>
 </div></aside></section>
+<section id="poll-are-you-familiar-with-pose-estimation" class="slide level2 smaller">
+<h2>Poll: are you familiar with pose estimation?</h2>
+<p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true">Answer on mentimeter</a></p>
+
+<aside><div>
+<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5524 7145</code></p>
+</div></aside></section>
 <section id="multi-animal-part-grouping" class="slide level2 smaller">
 <h2>Multi-animal part grouping</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
+<div class="r-stack">
 <p><img data-src="img/mouse-multi-animal-keypoints.png"></p>
-</div><div class="column fragment" style="width:50%;">
-<p><img data-src="img/mouse-part-grouping.png"></p>
-</div>
+<p><img data-src="img/mouse-part-grouping.png" class="fragment"></p>
 </div>
 </section>
 <section id="top-down-vs-bottom-up" class="slide level2 smaller">
 <h2>Top-down vs bottom-up</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pose_estimation_topdown.png" height="230"></p>
+<p><img data-src="img/pose_estimation_topdown.png" class="quarto-figure quarto-figure-center" height="230"></p>
 </figure>
 </div>
 <div class="fragment">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pose_estimation_bottomup.png" height="230"></p>
+<p><img data-src="img/pose_estimation_bottomup.png" class="quarto-figure quarto-figure-center" height="230"></p>
 </figure>
 </div>
 </div>
@@ -776,20 +965,24 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <p><img data-src="img/mouse-appearance-based-tracking.png"></p>
 </div><div class="column fragment" style="width:33%;">
 <p><img data-src="img/mouse-motion-based-tracking.png"></p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="d-pose-estimation" class="slide level2 smaller">
 <h2>3D pose estimation</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pose_estimation_3D.png" height="400"></p>
+<p><img data-src="img/pose_estimation_3D.png" class="quarto-figure quarto-figure-center" height="400"></p>
 </figure>
 </div>
 
 <aside><div>
 <p>source: <a href="https://www.nature.com/articles/s41593-020-00734-z">Quantifying behavior to understand the brain</a></p>
-</div></aside></section>
+</div></aside></section></section>
+<section>
+<section id="practice-sleap-i" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Practice: SLEAP I</h1>
+
+</section>
 <section id="which-mouse-is-more-anxious" class="slide level2 smaller">
 <h2>Which mouse is more anxious?</h2>
 <p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true" style="text-align: center">Click here to post your answers</a></p>
@@ -808,16 +1001,15 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <figcaption>sub-02</figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </section>
 <section id="the-elevated-plus-maze" class="slide level2 smaller">
 <h2>The Elevated Plus Maze</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="text-align: center">
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/mouse1_EPM.gif" height="400"></p>
+<p><img data-src="img/mouse1_EPM.gif" class="quarto-figure quarto-figure-center" style="text-align: center" height="400"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -826,42 +1018,35 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <li>Exploits rodents’ natural aversion to open spaces and height</li>
 <li>Less anxious animals spend more time in open arms</li>
 </ul>
-</div>
-</div>
+</div></div>
 <div class="fragment" style="text-align: center; color: #03A062;">
 <p><strong>Task</strong>: quantify time spent in open arms / closed arms</p>
 </div>
 </section>
-<section id="the-dataset" class="slide level2 smaller">
+<section id="the-dataset" class="slide level2">
 <h2>The dataset</h2>
 <p><code>$ cd behav-analysis-course</code></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1"></a><span class="bu">.</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="ex">├──</span> LICENSE</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="ex">├──</span> README.md</span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="ex">└──</span> mouse-EPM</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="ex">├──</span> derivatives</span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="ex">└──</span> rawdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">behav-analysis-course/</span></span>
+<span id="cb2-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> LICENSE</span>
+<span id="cb2-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> README.md</span>
+<span id="cb2-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> mouse-EPM</span>
+<span id="cb2-5"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="ex">├──</span> derivatives</span>
+<span id="cb2-6"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> rawdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p><code>$ cd mouse-EPM/rawdata</code></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="bu">.</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="ex">├──</span> sub-01_id-M708149</span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="ex">│</span>   └── ses-01_date-20200317</span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="ex">│</span>       └── behav</span>
-<span id="cb5-5"><a href="#cb5-5"></a><span class="ex">│</span>           └── sub-01_ses-01_task-EPM_time-165049_video.mp4</span>
-<span id="cb5-6"><a href="#cb5-6"></a><span class="ex">└──</span> sub-02_id-M708154</span>
-<span id="cb5-7"><a href="#cb5-7"></a>    <span class="ex">└──</span> ses-01_date-20200317</span>
-<span id="cb5-8"><a href="#cb5-8"></a>        <span class="ex">└──</span> behav</span>
-<span id="cb5-9"><a href="#cb5-9"></a>            <span class="ex">└──</span> sub-02_ses-01_task-EPM_time-185651_video.mp4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">rawdata/</span></span>
+<span id="cb3-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> sub-01_ses-01_task-EPM_time-165049_video.mp4</span>
+<span id="cb3-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> sub-02_ses-01_task-EPM_time-185651_video.mp4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 
 <aside><div>
-<p>Organised according to the <a href="https://neuroblueprint.neuroinformatics.dev/">NeuroBlueprint</a> specification.</p>
+<p>Roughly following the <a href="https://neuroblueprint.neuroinformatics.dev/">NeuroBlueprint</a> specification.</p>
 </div></aside></section>
 <section id="the-sleap-workflow" class="slide level2">
 <h2>The SLEAP workflow</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/pose-estimation.svg" height="500"></p>
+<p><img data-src="img/pose-estimation.svg" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 </section>
@@ -869,7 +1054,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Create a new project</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/1_add_videos.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/1_add_videos.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 
@@ -882,11 +1067,11 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <div class="column" style="width:60%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/mouse-annotated.png" height="400"></p>
+<p><img data-src="img/mouse-annotated.png" class="quarto-figure quarto-figure-center" height="400"></p>
 </figure>
 </div>
 </div><div class="column" style="width:40%;">
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th>Source</th>
@@ -924,8 +1109,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 </tr>
 </tbody>
 </table>
-</div>
-</div>
+</div></div>
 <div style="text-align: center; color: #03A062;">
 <p>Save the project right after defining the skeleton!</p>
 </div>
@@ -934,7 +1118,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Generate labeling suggestions</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/5_generate_labelling_suggestions.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/5_generate_labelling_suggestions.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 </section>
@@ -942,7 +1126,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Label initial ~20 frames</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/6_labelling.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/6_labelling.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 
@@ -953,7 +1137,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Start a training job 1/3</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/7a_training_pipeline.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/7a_training_pipeline.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 
@@ -964,7 +1148,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Start a training job 2/3</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/7b_training_centroid.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/7b_training_centroid.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 
@@ -975,7 +1159,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Start a training job 3/3</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/7c_training_centered_instance.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/7c_training_centered_instance.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 
@@ -986,158 +1170,169 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <h2>Monitor training progress</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/7d_training_progress.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/7d_training_progress.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
+</section></section>
+<section id="coffee-break" class="title-slide slide level1 center" data-background-color="#1E1E1E">
+<h1>Coffee break ☕</h1>
+
+</section>
+
+<section>
+<section id="practice-sleap-ii" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Practice: SLEAP II</h1>
+
 </section>
 <section id="evaluate-trained-models" class="slide level2">
 <h2>Evaluate trained models</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/8_evaluation.png" height="500"></p>
+<p><img data-src="img/SLEAP_screenshots/8_evaluation.png" class="quarto-figure quarto-figure-center" height="500"></p>
 </figure>
 </div>
 
 <aside><div>
-<p>see also the SLEAP <a href="https://sleap.ai/notebooks/Model_evaluation.html" data-preview-link="true">model evaluation notebook</a></p>
+<p>see also the SLEAP <a href="https://sleap.ai/notebooks/Model_evaluation.html">model evaluation notebook</a></p>
 </div></aside></section>
 <section id="run-inference-on-new-frames" class="slide level2">
 <h2>Run inference on new frames</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/SLEAP_screenshots/9_inference.png" height="450"></p>
+<p><img data-src="img/SLEAP_screenshots/9_inference.png" class="quarto-figure quarto-figure-center" height="400"></p>
 </figure>
 </div>
 
 <aside><div>
-<p>To correct predictions and update your training data, see SLEAP’s <a href="https://sleap.ai/tutorials/assisted-labeling.html">Prediction-assisted labeling</a> and <a href="https://sleap.ai/guides/merging.html">Merging guide</a>.</p>
+<ul>
+<li>Expect errors on silicon (M1/M2) Macs, see <a href="https://github.com/talmolab/sleap/discussions/1151">this discussion</a></li>
+<li>To correct predictions and update your training data, see SLEAP’s <a href="https://sleap.ai/tutorials/assisted-labeling.html">Prediction-assisted labeling</a> and <a href="https://sleap.ai/guides/merging.html">Merging guide</a>.</li>
+</ul>
 </div></aside></section>
 <section id="using-sleap-on-the-hpc-cluster" class="slide level2">
 <h2>Using SLEAP on the HPC cluster</h2>
-<div>
 <ul>
-<li class="fragment">training and inference are GPU-intensive tasks</li>
-<li class="fragment">SLEAP is installed as a module on SWC’s HPC cluster</li>
-<li class="fragment"><code>module load sleap</code></li>
-<li class="fragment"><a href="https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html" data-preview-link="true">See this guide for detailed instructions</a></li>
-<li class="fragment"><a href="https://software-skills.neuroinformatics.dev/courses/hpc-behaviour.html" data-preview-link="true">Come to the HPC course next week</a></li>
-<li class="fragment">Similar instructions for the DeepLabCut module underway…</li>
+<li>training and inference are GPU-intensive tasks</li>
+<li>SLEAP is installed as a module on SWC’s HPC cluster</li>
+<li><code>module load sleap</code></li>
+<li><a href="https://howto.neuroinformatics.dev/data_analysis/HPC-module-SLEAP.html">See this guide for detailed instructions</a></li>
+<li><a href="https://software-skills.neuroinformatics.dev/courses/hpc-behaviour.html">Come to the HPC course tomorrow</a></li>
 </ul>
-</div>
 </section>
 <section id="predictions-in-the-sample-dataset" class="slide level2 smaller">
 <h2>Predictions in the sample dataset</h2>
-<p><code>$ cd behav-analysis-course/mouse-EPM</code></p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1"></a><span class="bu">.</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="ex">└──</span> derivatives</span>
-<span id="cb6-3"><a href="#cb6-3"></a>    <span class="ex">└──</span> behav</span>
-<span id="cb6-4"><a href="#cb6-4"></a>        <span class="ex">├──</span> software-DLC_predictions</span>
-<span id="cb6-5"><a href="#cb6-5"></a>        <span class="ex">└──</span> software-SLEAP_project</span>
-<span id="cb6-6"><a href="#cb6-6"></a>            <span class="ex">└──</span> predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><code>$ cd behav-analysis-course/mouse-EPM/derivatives</code></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">derivatives/</span></span>
+<span id="cb4-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> software-DLC_predictions</span>
+<span id="cb4-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> software-SLEAP_project</span>
+<span id="cb4-4"><a href="" aria-hidden="true" tabindex="-1"></a>    <span class="ex">└──</span> predictions</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <ul>
 <li>Different pose estimation software produce predictions in different formats.</li>
 <li>Different workflows are needed for importing predicted poses into <code>Python</code> for further analysis.
 <ul>
-<li>e.g.&nbsp;for <code>SLEAP</code> see <a href="https://sleap.ai/notebooks/Analysis_examples.html" data-preview-link="true">Analysis examples</a></li>
+<li>e.g.&nbsp;for <code>SLEAP</code> see <a href="https://sleap.ai/notebooks/Analysis_examples.html">Analysis examples</a></li>
 </ul></li>
 </ul>
 </div>
 </section>
-<section id="what-happens-after-tracking" class="slide level2 smaller">
-<h2>What happens after tracking?</h2>
-<div class="cell" data-reveal="true" data-file="img/video_pipeline_kino.mmd" data-fig-height="500px">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-    classDef emphasis fill:#03A062;
-
-    video --&gt;|compression/re-encoding | video2["compressed video"]
-    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
-    tracks --&gt; |calculations| kinematics
-    tracks --&gt;|classifiers| actions["actions / behav syllables"]
-    video2 --&gt; |comp vision| actions
-
-    linkStyle 2 stroke:#03A062, color:;
-    class tracks emphasis
-    class kinematics emphasis</pre>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section id="enter-movement" class="slide level2 smaller">
-<h2>Enter <code>movement</code></h2>
+<section id="what-happens-after-pose-tracking" class="slide level2 smaller scrollable">
+<h2>What happens after pose tracking?</h2>
 <div class="columns">
-<div class="column" style="width:55%;">
-<p><img data-src="img/movement-repo-screenshot.png"></p>
-</div><div class="column" style="width:45%;">
-<p>Python tools for analysing body movements across space and time.</p>
+<div class="column" style="width:40%;">
+<p><img data-src="img/open-source-tools-fig2a.png"></p>
+</div><div class="column" style="width:60%;">
 <ul>
-<li><a href="https://github.com/neuroinformatics-unit/movement">GitHub repository</a></li>
-<li><a href="https://movement.neuroinformatics.dev">Documentation</a></li>
-<li><a href="https://pypi.org/project/movement/">PyPI package</a></li>
-<li><a href="https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement">Zulip chat</a></li>
+<li>Load data into Python</li>
+<li>Visualise and inspect data</li>
+<li>Clean trajectories:
+<ul>
+<li>Identify and drop outliers</li>
+<li>Smooth trajectories</li>
+<li>Interpolate over missing data</li>
+</ul></li>
+<li>Compute variables of interest:
+<ul>
+<li>Velocity, acceleration, heading, etc.</li>
+<li>Distances/angles between body parts</li>
+<li>Time spent in different regions</li>
+<li>Application-specific: navigation, social interactions, gait analysis</li>
+</ul></li>
 </ul>
-</div>
-</div>
+</div></div>
+</section></section>
+<section id="lunch-break" class="title-slide slide level1 center" data-background-color="#1E1E1E">
+<h1>Lunch break 🍽</h1>
+
 </section>
-<section id="movement-features" class="slide level2 smaller">
-<h2><code>movement</code> features</h2>
-<p>Implemented: <strong>I/O</strong></p>
-<ul>
-<li>✅ import pose tracks from <code>DeepLabCut</code> and <code>SLEAP</code></li>
-<li>✅ represent pose tracks in common data structure</li>
-<li>⏳ export pose tracks in various formats</li>
-</ul>
-<div class="fragment">
-<p>In progress / planned:</p>
-<ul>
-<li>⏳ Interactive visualisations: plot pose tracks, ROIs, etc.</li>
-<li>🤔 Data cleaning: drop bad values, interpolate, smooth, resample etc.</li>
-<li>🤔 Derive kinematic variables: velocity, acceleration, orientation, etc.</li>
-<li>🤔 Integrate spatial information about the environment (e.g.&nbsp;ROIs, arena)</li>
-<li>🤔 Coordinate transformations (e.g.&nbsp;egocentric)</li>
-</ul>
+
+<section>
+<section id="practice-movement" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Practice: movement</h1>
+
+</section>
+<section id="movement" class="slide level2 smaller">
+<h2>movement</h2>
+<p>A Python toolbox for analysing body movements across space and time, to aid the study of animal behaviour in neuroscience.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/movement_overview.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
 </div>
 
 <aside><div>
-<p>For more info see movement’s <a href="https://movement.neuroinformatics.dev/community/mission-scope.html">Mission &amp; Scope statement</a> and <a href="https://movement.neuroinformatics.dev/community/roadmap.html">Roadmap</a>.</p>
+<p><a href="https://github.com/neuroinformatics-unit/movement">GitHub repository</a> | <a href="https://movement.neuroinformatics.dev">Documentation</a> | <a href="https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement">Zulip chat</a></p>
 </div></aside></section>
-<section id="the-movement-data-structure" class="slide level2 smaller">
-<h2>The movement data structure</h2>
+<section id="the-movement-poses-dataset" class="slide level2 smaller">
+<h2>The movement poses dataset</h2>
 <div class="columns">
-<div class="column" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="text-align: center">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/movement-dataset-single-individual.png" height="400"></p>
-<figcaption>single-animal</figcaption>
+<p><img data-src="img/movement_poses_schematic.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div><div class="column fragment" style="width:50%;">
-<div class="quarto-figure quarto-figure-center" style="text-align: center">
+</div><div class="column fragment" style="width:75%;">
+<div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/movement-dataset-multi-individual.png" height="400"></p>
-<figcaption>multi-animal</figcaption>
+<p><img data-src="img/movement_poses_dataset.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 
 <aside><div>
 <p>Powered by <a href="https://docs.xarray.dev/en/latest/index.html"><code>xarray</code></a> and its <a href="https://tutorial.xarray.dev/fundamentals/01_datastructures.html">data structures</a></p>
 </div></aside></section>
-<section id="time-to-play" class="slide level2 smaller">
-<h2>Time to play 🛝</h2>
+<section id="the-movement-bboxes-dataset" class="slide level2 smaller">
+<h2>The movement bboxes dataset</h2>
+<div class="columns">
+<div class="column" style="width:25%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/movement_bboxes_schematic.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div><div class="column fragment" style="width:75%;">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/movement_bboxes_dataset.png" class="quarto-figure quarto-figure-center"></p>
+</figure>
+</div>
+</div></div>
+
+<aside><div>
+<p>Powered by <a href="https://docs.xarray.dev/en/latest/index.html"><code>xarray</code></a> and its <a href="https://tutorial.xarray.dev/fundamentals/01_datastructures.html">data structures</a></p>
+</div></aside></section>
+<section id="time-to-play-with-movement" class="slide level2 smaller">
+<h2>Time to play 🛝 with <code>movement</code></h2>
 <p>In a terminal, clone <a href="https://github.com/neuroinformatics-unit/course-behavioural-analysis">the course repository</a> and go to the notebooks directory:</p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">git</span> clone https://github.com/neuroinformatics-unit/course-behavioural-analysis.git</span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="bu">cd</span> course-behavioural-analysis/notebooks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/neuroinformatics-unit/course-behavioural-analysis.git</span>
+<span id="cb5-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> course-behavioural-analysis/notebooks</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="fragment">
 <p>Create a new conda environment and install required packages:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1"></a><span class="ex">conda</span> create <span class="at">-n</span> epm-analysis <span class="at">-c</span> conda-forge python=3.10 pytables</span>
-<span id="cb8-2"><a href="#cb8-2"></a><span class="ex">conda</span> activate epm-analysis</span>
-<span id="cb8-3"><a href="#cb8-3"></a><span class="ex">pip</span> install <span class="at">-r</span> notebook_requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> create <span class="at">-n</span> epm-analysis <span class="at">-c</span> conda-forge python=3.11 pip pytables</span>
+<span id="cb6-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> activate epm-analysis</span>
+<span id="cb6-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install <span class="at">-r</span> EPM_analysis_requirements.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <p>Once all requirements are installed, you can:</p>
@@ -1154,68 +1349,240 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true">Answer on mentimeter</a></p>
 
 <aside><div>
-<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5306 9550</code></p>
-</div></aside></section>
-<section id="from-behaviour-to-actions" class="slide level2 smaller">
-<h2>From behaviour to actions</h2>
-<div class="columns">
-<div class="column" style="width:50%;">
-<div class="cell" data-reveal="true" data-file="img/video_pipeline_actions.mmd" data-fig-height="500px">
-<div class="cell-output-display">
-<div>
-<div>
-<pre class="mermaid mermaid-js">flowchart TB
-    classDef emphasis fill:#03A062;
+<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5524 7145</code></p>
+</div></aside></section></section>
+<section id="coffee-break-1" class="title-slide slide level1 center" data-background-color="#1E1E1E">
+<h1>Coffee break ☕</h1>
 
-    video --&gt;|compression/re-encoding | video2["compressed video"]
-    video2 --&gt;|pose estimation + tracking| tracks["pose tracks"]
-    tracks --&gt; |calculations| kinematics
-    tracks --&gt;|classifiers| actions["actions / behav syllables"]
-    video2 --&gt; |comp vision| actions
-
-    linkStyle 3 stroke:#03A062, color:;
-    linkStyle 4 stroke:#03A062, color:;
-    class tracks emphasis
-    class video2 emphasis
-    class actions emphasis</pre>
-</div>
-</div>
-</div>
-</div>
-</div><div class="column" style="width:50%;">
-<p>Several tools:</p>
-<ul>
-<li><a href="https://github.com/sgoldenlab/simba">SimBA</a></li>
-<li><a href="https://dattalab.github.io/moseq2-website/index.html">MoSeq</a></li>
-<li><a href="https://edspace.american.edu/openbehavior/project/vame/">VAME</a></li>
-<li><a href="https://github.com/YttriLab/B-SOID">B-SOID</a></li>
-<li><a href="https://github.com/amathislab/DLC2action">DLC2action</a></li>
-</ul>
-</div>
-</div>
 </section>
-<section id="classifying-behaviours" class="slide level2">
-<h2>Classifying behaviours</h2>
+
+<section>
+<section id="theory-from-behaviour-to-actions" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Theory: From behaviour to actions</h1>
+
+</section>
+<section id="discretising-the-continuous-12" class="slide level2 smaller">
+<h2>Discretising the continuous 1/2</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/behaviour-classification.png" height="400"></p>
+<p><img data-src="img/open-source-tools-fig1b.png" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+
+<aside><div>
+<p>source: <a href="https://elifesciences.org/articles/79305">Open-source tools for behavioral video analysis: Setup, methods, and best practices</a></p>
+</div></aside></section>
+<section id="discretising-the-continuous-22" class="slide level2 smaller">
+<h2>Discretising the continuous 2/2</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/behaviour-classification.png" class="quarto-figure quarto-figure-center"></p>
 </figure>
 </div>
 
 <aside><div>
 <p>source: <a href="https://www.nature.com/articles/s41593-020-00734-z">Quantifying behavior to understand the brain</a></p>
 </div></aside></section>
-<section id="supervised-vs-unsupervised-approaches" class="slide level2">
-<h2>Supervised vs unsupervised approaches</h2>
+<section id="supervised-vs-unsupervised-tools" class="slide level2 smaller">
+<h2>Supervised vs unsupervised tools</h2>
+<table class="table-striped caption-top">
+<thead>
+<tr class="header">
+<th><strong>Supervised</strong></th>
+<th><strong>Unsupervised</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><a href="https://github.com/sgoldenlab/simba">SimBA</a></td>
+<td><a href="https://github.com/gordonberman/MotionMapper">MotionMapper</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/jbohnslav/deepethogram">DeepEthogram</a></td>
+<td><a href="https://dattalab.github.io/moseq2-website/index.html">MoSeq (depth- or keypoint-)</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/KumarLabJax/JABS-behavior-classifier">JAX Animal Behavior System</a></td>
+<td><a href="https://github.com/YttriLab/B-SOID">B-SOID</a></td>
+</tr>
+<tr class="even">
+<td><a href="https://github.com/neuroethology/MARS">MARS</a></td>
+<td><a href="https://edspace.american.edu/openbehavior/project/vame/">VAME</a></td>
+</tr>
+<tr class="odd">
+<td><a href="https://github.com/amathislab/DLC2action/tree/master">DLC2action</a></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+
+<aside><div>
+<p>Not a complete list!</p>
+</div></aside></section>
+<section id="problems-with-supervised-methods" class="slide level2">
+<h2>Problems with supervised methods</h2>
 <p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true">Answer on mentimeter</a></p>
 
 <aside><div>
-<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5306 9550</code></p>
+<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5524 7145</code></p>
 </div></aside></section>
-<section id="feedback" class="slide level2">
-<h2>Feedback</h2>
+<section id="problems-with-unsupervised-methods" class="slide level2">
+<h2>Problems with unsupervised methods</h2>
+<p><a href="https://www.menti.com/aldg47maopsr" data-preview-link="true">Answer on mentimeter</a></p>
+
+<aside><div>
+<p>OR join at <a href="https://www.menti.com/">menti.com</a> and use the code <code>5524 7145</code></p>
+</div></aside></section></section>
+<section>
+<section id="demo-keypoint-moseq" class="title-slide slide level1 center" data-background-color="#03A062">
+<h1>Demo: Keypoint-MoSeq</h1>
+
+</section>
+<section id="motion-sequencing" class="slide level2 smaller">
+<h2>Motion Sequencing</h2>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1,1,2]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center" style="text-align: center">
+<figure>
+<p><img data-src="img/depth-moseq.gif" height="225"></p>
+<figcaption>Depth video recordings</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 25.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center" style="text-align: center">
+<figure>
+<p><img data-src="img/depth-moseq-diagram.png" height="225"></p>
+<figcaption>AR-HMM</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center" style="text-align: center">
+<figure>
+<p><img data-src="img/depth-moseq-syllables.png" height="225"></p>
+<figcaption>depth-MoSeq</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div>
+<ul>
+<li class="fragment">Timescale is controlled by the <code>kappa</code> parameter</li>
+<li class="fragment">Higher <code>kappa</code> &gt; higher P(self-transition) &gt; “stickier” states &gt; longer syllables</li>
+</ul>
+</div>
+
+<aside><div>
+<p>source: <a href="https://doi.org/10.1016/j.neuron.2015.11.031">Mapping Sub-Second Structure in Mouse Behavior</a></p>
+</div></aside></section>
+<section id="keypoint-moseq" class="slide level2 smaller">
+<h2>Keypoint-MoSeq</h2>
+<p>Can we apply MoSeq to keypoint data (predicted poses)?</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/depth-vs-keypoint-moseq.png" class="quarto-figure quarto-figure-center" height="350"></p>
+</figure>
+</div>
+
+<aside><div>
+<p>source: <a href="https://doi.org/10.1038/s41592-024-02318-2">Keypoint-MoSeq: parsing behavior by linking point tracking to pose dynamics</a></p>
+</div></aside></section>
+<section id="problems-with-keypoint-data" class="slide level2 smaller">
+<h2>Problems with keypoint data</h2>
+<div class="columns">
+<div class="column" style="width:70%;">
+<p><img data-src="img/keypoint-errors.png" width="600"></p>
+<p><img data-src="img/keypoint-jitter.png" width="610"></p>
+</div><div class="column" style="width:30%;">
+<div>
+<ul>
+<li class="fragment">Keypoint noise leads to artifactual syllables</li>
+<li class="fragment">We should somehow isolate true pose from noise</li>
+<li class="fragment">But smoothing also blurs syllable boundaries</li>
+</ul>
+</div>
+</div></div>
+
+<aside><div>
+<p>source: <a href="https://doi.org/10.1038/s41592-024-02318-2">Keypoint-MoSeq: parsing behavior by linking point tracking to pose dynamics</a></p>
+</div></aside></section>
+<section id="solution-a-more-complex-model" class="slide level2 smaller">
+<h2>Solution: a more complex model</h2>
+<p><strong>Switching Linear Dynamical System (SLDS):</strong> combine noise-removal and action segmentation in a single probabilistic model</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1,1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="img/moseq-model-diagrams.png"></p>
+</div>
+<div class="r-stack quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<p><img data-src="img/allocentric-poses.png" class="fragment"></p>
+<p><img data-src="img/egocentric-alignment.png" class="fragment"></p>
+<p><img data-src="img/keypoint-moseq-modeling.png" class="fragment"></p>
+</div>
+</div>
+</div>
+</section>
+<section id="keypoint-moseq-drawbacks" class="slide level2">
+<h2>Keypoint-MoSeq drawbacks</h2>
+<div>
+<ul>
+<li class="fragment">probabilistic output
+<ul>
+<li class="fragment">stochasticity of output syllables</li>
+<li class="fragment">must fit ensemble of models and take a “consensus”</li>
+</ul></li>
+<li class="fragment">limited to describing behaviour at a single time-scale
+<ul>
+<li class="fragment">but can be adapted by tuning <code>kappa</code></li>
+</ul></li>
+<li class="fragment">may miss rare behaviours (not often seen in training data)</li>
+</ul>
+</div>
+</section>
+<section id="lets-look-at-some-syllables" class="slide level2 smaller">
+<h2>Let’s look at some syllables</h2>
+<p>We’ve trained a keypoint-MoSeq model on 10 videos from the (EPM) dataset.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">mouse-EPM/</span></span>
+<span id="cb7-2"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">├──</span> derivatives</span>
+<span id="cb7-3"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">│</span>   └── software-kptmoseq_n-10_project</span>
+<span id="cb7-4"><a href="" aria-hidden="true" tabindex="-1"></a><span class="ex">└──</span> rawdata</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="img/all_trajectories.gif" class="quarto-figure quarto-figure-center" height="400"></p>
+</figure>
+</div>
+</div>
+
+<aside><div>
+<p>The model was trained using the <a href="https://github.com/neuroinformatics-unit/course-behavioural-analysis/blob/main/notebooks/EPM_train_keypoint_moseq.ipynb">EPM_train_keypoint_moseq.ipynb</a> notebook in the course’s <a href="https://github.com/neuroinformatics-unit/course-behavioural-analysis">GitHub repository</a>.</p>
+</div></aside></section>
+<section id="time-to-play-with-keypoint-moseq" class="slide level2">
+<h2>Time to play 🛝 with Keypoint-MoSeq</h2>
+<p>We will use the trained model to extract syllables from a new video.</p>
+<div class="fragment">
+<ul>
+<li>Navigate to the same repository you cloned earlier <code>cd course-behavioural-analysis/notebooks</code></li>
+<li>open the <code>EPM_syllables.ipynb</code> notebook</li>
+<li>select the environment <code>keypoint_moseq</code> as the kernel</li>
+</ul>
+<p>We will go through the notebook step-by-step, together.</p>
+</div>
+</section></section>
+<section>
+<section id="feedback" class="title-slide slide level1 center">
+<h1>Feedback</h1>
 <p>Tell us what you think about this course!</p>
-<p>Write on <a href="https://ideaboardz.com/for/course-behav-analysis-2023/5137372">IdeaBoardz</a> or talk to us anytime.</p>
+<p>Write on <a href="https://ideaboardz.com/for/course-behav-analysis-2024/5391792">IdeaBoardz</a> or talk to us anytime.</p>
 </section>
 <section id="join-the-movement" class="slide level2 smaller">
 <h2>Join the movement!</h2>
@@ -1223,7 +1590,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <div class="column" style="width:50%;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="img/movement-dataset-multi-individual.png" height="400"></p>
+<p><img data-src="img/movement_poses_schematic.png" class="quarto-figure quarto-figure-center" height="400"></p>
 </figure>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1232,13 +1599,14 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
 <li><p><a href="(https://neuroinformatics.zulipchat.com/#narrow/stream/406001-Movement)">Chat with us on Zulip</a></p></li>
 <li><p>Or <a href="https://github.com/neuroinformatics-unit/movement/issues">open an issue on GitHub</a></p></li>
 </ul>
-</div>
-</div>
+</div></div>
+<div class="quarto-auto-generated-content">
 <p><img src="img/logo_niu_light.png" class="slide-logo"></p>
 <div class="footer footer-default">
-<p>Sainsbury Wellcome Centre | 2023-11-29</p>
+<p>Sainsbury Wellcome Centre | 2024-10-03</p>
 </div>
-</section>
+</div>
+</section></section>
     </div>
   </div>
 
@@ -1266,7 +1634,6 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1484,18 +1851,7 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1527,11 +1883,52 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+              // default icon
+              link.classList.add("external");
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1541,8 +1938,17 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1556,7 +1962,11 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {
@@ -1596,20 +2006,6 @@ Niko Sirmpilatze, Chang Huan Lo, Alessandro Felder
           });
         }
       }
-        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
-          var filterRegex = new RegExp('/' + window.location.host + '/');
-        var isInternal = (href) => {
-            return filterRegex.test(href) || localhostRegex.test(href);
-        }
-        // Inspect non-navigation links and adorn them if external
-     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item)');
-        for (var i=0; i<links.length; i++) {
-          const link = links[i];
-          if (!isInternal(link.href)) {
-              // default icon
-              link.classList.add("external");
-          }
-        }
     });
     </script>
     
